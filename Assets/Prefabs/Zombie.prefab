@@ -590,7 +590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   player: {fileID: 0}
-  hitPoints: 5
+  hitPoints: 100
   gameManager: {fileID: 0}
   damageParticle: {fileID: 9131272741231799317}
 --- !u!1 &9131272741231799316
