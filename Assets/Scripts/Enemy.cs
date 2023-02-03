@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-
+    private int damage;
     public float speed;
     private Rigidbody enemyRB;
     public GameObject player;
@@ -36,12 +36,13 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        int damage = Random.Range(15,25);
         if (other.gameObject.CompareTag("Projectile"))
         {
             Destroy(other.gameObject);
-            hitPoints -= 1;
+            hitPoints -= damage;
             damageParticle.Play();
-            if (hitPoints == 0)
+            if (hitPoints <= 0)
             {
                 Destroy(gameObject);
             }
