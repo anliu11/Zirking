@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random=UnityEngine.Random;
 
 public class BossScript : MonoBehaviour
 {
+
     public float speed;
     private Rigidbody BossRB;
     public GameObject player;
@@ -39,12 +41,13 @@ public class BossScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        int damage = Random.Range(15,25);
         if (other.gameObject.CompareTag("Projectile"))
         {
             Destroy(other.gameObject);
-            hitPoints -= 1;
+            hitPoints -= damage;
             damageParticle.Play();
-            if (hitPoints == 0)
+            if (hitPoints <= 0)
             {
                 Destroy(gameObject);
             }
