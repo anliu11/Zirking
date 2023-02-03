@@ -4981,7 +4981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2.5
   player: {fileID: 0}
-  hitPoints: 30
+  hitPoints: 300
   gameManager: {fileID: 0}
   bossdps: 0
   damageParticle: {fileID: 3206605165182098262}
