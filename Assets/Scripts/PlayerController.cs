@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private Transform bulletSpawned;
     public ParticleSystem shootParticle;
     public int hP;
-    public int maxHP = 100;
+    private int maxHP = 100;
     public HealthBar healthBar;
     public GameManager gameManager;
     public GameObject BossObject;
