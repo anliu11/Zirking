@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private Transform bulletSpawned;
     public ParticleSystem shootParticle;
     public int hP;
-    public int maxHP = 10;
+    public int maxHP = 100;
     public HealthBar healthBar;
     public GameManager gameManager;
     public GameObject BossObject;
@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("MedKit"))
         {
             Debug.Log("Collected MedKit");
-            hP += 10;
+            hP += 100;
             playerAudio.PlayOneShot(healthKitSound, 0.5f);
             healthBar.SetHealth(hP);
 
@@ -135,8 +135,9 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            int damage = Random.Range(15,20);
             Debug.Log("Collided with " + collision.gameObject.name);
-            hP -= 1;
+            hP -= damage;
             healthBar.SetHealth(hP);
             Rigidbody enemyRigidBody = collision.gameObject.GetComponent<Rigidbody>();
             Vector3 awayyFromPlayer = collision.gameObject.transform.position - transform.position;
@@ -152,7 +153,8 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Collided with " + collision.gameObject.name);
             if (BossDps == true)
             {
-                hP -= 5;
+                int damage = Random.Range(25,30);
+                hP -= damage;
                 healthBar.SetHealth(hP);
                 if (hP <= 0)
                 {
@@ -161,7 +163,8 @@ public class PlayerController : MonoBehaviour
             }
             if (BossDps == false)
             {
-                hP -= 2;
+                int damage = Random.Range(20,25);
+                hP -= damage;
                 healthBar.SetHealth(hP);
                 if (hP <= 0)
                 {
