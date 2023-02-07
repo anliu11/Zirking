@@ -872,7 +872,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &109425180 stripped
 Transform:
@@ -1503,8 +1503,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: skeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 7948085383865007807, guid: cfc61cb5a9d4b4c15b360fd7e037d5c9, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfc61cb5a9d4b4c15b360fd7e037d5c9, type: 3}
+--- !u!1 &203426464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7948085383865007807, guid: cfc61cb5a9d4b4c15b360fd7e037d5c9, type: 3}
+  m_PrefabInstance: {fileID: 203426463}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &203426465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203426464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8097523feaf443882b67c6dafa8684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  player: {fileID: 0}
+  hitPoints: 0
+  gameManager: {fileID: 0}
+  damageParticle: {fileID: 0}
 --- !u!1001 &207400160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3814,8 +3840,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: boss skeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 3049647304677200206, guid: 9d369daaf3a0d4a26a8b83b92bd7874f, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d369daaf3a0d4a26a8b83b92bd7874f, type: 3}
+--- !u!1 &417882411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3049647304677200206, guid: 9d369daaf3a0d4a26a8b83b92bd7874f, type: 3}
+  m_PrefabInstance: {fileID: 417882410}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &417882412
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417882411}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &424464495
 GameObject:
   m_ObjectHideFlags: 0
@@ -3858,7 +3906,6 @@ MonoBehaviour:
   camera: {fileID: 963194227}
   shootParticle: {fileID: 0}
   hP: 0
-  maxHP: 10
   healthBar: {fileID: 800840293}
   gameManager: {fileID: 0}
   BossObject: {fileID: 0}
@@ -4100,8 +4147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50721528b63f247738abd9f44573ebe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8248806696218223792, guid: 292f2f883a3874f468195c2f14c5085f, type: 3}
-  bossPrefab: {fileID: 4242452295651010834, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
+  enemyPrefab: {fileID: 203426464}
+  bossPrefab: {fileID: 417882411}
   medpackPrefab: {fileID: 3234095999662694036, guid: 11573369437d746b18de5af3ea17f7ec, type: 3}
   waveCount: 1
   bossCount: 1
@@ -14244,7 +14291,6 @@ MonoBehaviour:
   camera: {fileID: 963194227}
   shootParticle: {fileID: 0}
   hP: 0
-  maxHP: 10
   healthBar: {fileID: 800840293}
   gameManager: {fileID: 0}
   BossObject: {fileID: 0}
