@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class DoNotDeleteMusic : MonoBehaviour
 {
+    public static DoNotDeleteMusic BgInstance;
+
     void Awake()
     {
+        if(BgInstance != null & BgInstance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
+        BgInstance = this;
         DontDestroyOnLoad(transform.gameObject);
     }
 
