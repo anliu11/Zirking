@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         }
 
         //Runs when player reaches level x
-        if (wave > 5)
+        if (wave > 10)
         {
             Win();
         }
