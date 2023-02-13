@@ -127,8 +127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85944eddfad34b1696a3987468f2161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 4
   player: {fileID: 0}
-  hitPoints: 30
+  hitPoints: 200
   gameManager: {fileID: 0}
   bossdps: 0
+  damageParticle: {fileID: 0}
+  chargeParticle: {fileID: 0}
