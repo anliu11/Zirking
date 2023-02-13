@@ -37,7 +37,6 @@ Transform:
   - {fileID: 4748767478395289877}
   - {fileID: 3523428421895247504}
   - {fileID: 8228465440755498762}
-  - {fileID: 582028742332825689}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -86,7 +85,7 @@ MonoBehaviour:
   player: {fileID: 0}
   hitPoints: 75
   gameManager: {fileID: 0}
-  damageParticle: {fileID: 1237695011764905900}
+  damageParticle: {fileID: 1237695011491050074, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
 --- !u!1 &3822216518359155994
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,74 +585,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1001 &280450550
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1125663738624330035}
-    m_Modifications:
-    - target: {fileID: 582028742057498031, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 582028742057498031, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 582028742057498031, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 582028742057498031, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 582028742057498031, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 582028742057498031, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 582028742057498031, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 582028742057498031, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 582028742057498031, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 582028742057498031, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 582028742057498031, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1237695011491050074, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2129604084807241745, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
-      propertyPath: m_Name
-      value: Skeleton Damage Particle
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
---- !u!4 &582028742332825689 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 582028742057498031, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
-  m_PrefabInstance: {fileID: 280450550}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1237695011764905900 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1237695011491050074, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
-  m_PrefabInstance: {fileID: 280450550}
-  m_PrefabAsset: {fileID: 0}

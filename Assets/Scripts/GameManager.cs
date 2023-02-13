@@ -46,6 +46,12 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+
+        //Runs when player reaches level x
+        if (wave > 10)
+        {
+            Win();
+        }
     }
 
     public void UpdateWave(int waveToAdd)
@@ -53,6 +59,13 @@ public class GameManager : MonoBehaviour
         wave += waveToAdd;
     }
 
+    //Game win code
+    public void Win()
+    {
+        isGameActive = false;
+        returnButton.gameObject.SetActive(true);
+        Debug.Log("Player has won");
+    }
 
     //Game over code.
     public void GameOver()
