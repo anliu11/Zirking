@@ -150,8 +150,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.056141, y: 3.4882214, z: 1.9409838}
-  m_Center: {x: -0.02072078, y: 1.2441105, z: 0.4704919}
+  m_Size: {x: 2.056141, y: 2.9651873, z: 1.9409838}
+  m_Center: {x: -0.02072072, y: 1.5056275, z: 0.4704919}
 --- !u!114 &8060108118714070923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,8 +169,8 @@ MonoBehaviour:
   hitPoints: 200
   gameManager: {fileID: 0}
   bossdps: 0
-  damageParticle: {fileID: 0}
-  chargeParticle: {fileID: 0}
+  damageParticle: {fileID: 1237695011491050074, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
+  chargeParticle: {fileID: 1237695011491050074, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
 --- !u!1 &5546603867992332464
 GameObject:
   m_ObjectHideFlags: 0
