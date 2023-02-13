@@ -6,17 +6,27 @@ using Random=UnityEngine.Random;
 
 public class BossScript2 : MonoBehaviour
 {
-
+    public GameObject enemyPrefab;
+    private int MobNumber;
     public float speed;
     private Rigidbody BossRB;
     public GameObject player;
     public int hitPoints;
     private int playerhP;
     public GameManager gameManager;
-    public bool bossdps;
     public ParticleSystem damageParticle;
     public ParticleSystem chargeParticle;
+    private float spawnRangeX = 10;
+    private float spawnZMin = 5; // set min spawn Z
+    private float spawnZMax = 10; // set max spawn Z
 
+     Vector3 GenerateSpawnPosition()
+    {
+        float yPos = .5f;
+        float xPos = Random.Range(-spawnRangeX, spawnRangeX);
+        float zPos = Random.Range(-spawnZMin, spawnZMax);
+        return new Vector3(xPos, yPos, zPos);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +34,6 @@ public class BossScript2 : MonoBehaviour
         BossRB = GetComponent<Rigidbody>();
         InvokeRepeating("Ability", 1, 12);
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        bossdps = false;
     }
 
     // Update is called once per frame
@@ -57,19 +66,21 @@ public class BossScript2 : MonoBehaviour
     {
         speed = 0;
         chargeParticle.Play();
-        StartCoroutine(BuildUp());
+        MobNumber = Random.Range(3,5);
+        StartCoroutine(BuildUp(MobNumber));
         StartCoroutine(AbilityTimer());
     }
-    IEnumerator BuildUp()
+    IEnumerator BuildUp(int MobNumber)
     {
         yield return new WaitForSeconds(2);
-        bossdps = true;
+        for (int i = 0; i < MobNumber; i++)
+        {
+            Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+        }
         speed = 2.5f;
-        BossRB.AddForce(transform.forward * 60, ForceMode.Impulse);
     }
     IEnumerator AbilityTimer()
     {
         yield return new WaitForSeconds(4);
-        bossdps = false;
     }
 }  
