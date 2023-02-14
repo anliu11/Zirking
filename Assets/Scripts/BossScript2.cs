@@ -18,22 +18,27 @@ public class BossScript2 : MonoBehaviour
     public ParticleSystem chargeParticle;
     private float spawnRangeX = 10;
     private float spawnZMin = 5; // set min spawn Z
-    private float spawnZMax = 10; // set max spawn Z
-
-     Vector3 GenerateSpawnPosition()
-    {
-        float yPos = .5f;
-        float xPos = Random.Range(-spawnRangeX, spawnRangeX);
-        float zPos = Random.Range(-spawnZMin, spawnZMax);
-        return new Vector3(xPos, yPos, zPos);
-    }
+    private float spawnZMax = 10; // set max spawn Z 
+    private float ratx = posx;
+    private float ratz = posz;
+    
     // Start is called before the first frame update
     void Start()
     {
+        float posx = GameObject.Find("boss skeleton").transform.position.x;
+        float posz = GameObject.Find("boss skeleton").transform.position.z;
         player = GameObject.Find("Player");
         BossRB = GetComponent<Rigidbody>();
         InvokeRepeating("Ability", 1, 12);
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+
+    }
+        Vector3 GenerateSpawnPosition()
+    {
+        float yPos = .5f;
+        float xPos = ratx + Random.Range(-spawnRangeX, spawnRangeX);
+        float zPos = ratz + Random.Range(-spawnZMin, spawnZMax);
+        return new Vector3(xPos, yPos, zPos);
     }
 
     // Update is called once per frame
