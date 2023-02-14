@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         isGameActive = true;
+        Debug.Log("isGameActive is true");
         spawnManager = GameObject.Find("SpawnManager");
         wave = spawnManager.GetComponent<SpawnManager>().waveCount - 1;
         waveNumber.text = "Wave: " + wave.ToString();
