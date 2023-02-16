@@ -19,30 +19,24 @@ public class BossScript2 : MonoBehaviour
     private float spawnRangeX = 10;
     private float spawnZMin = 5; // set min spawn Z
     private float spawnZMax = 10; // set max spawn Z 
-    private float ratx = posx;
-    private float ratz = posz;
     
     // Start is called before the first frame update
+    class Global
+    {
+        public float posx;
+        public float posz;
+    }
     void Start()
     {
-        float posx = GameObject.Find("boss skeleton").transform.position.x;
-        float posz = GameObject.Find("boss skeleton").transform.position.z;
         player = GameObject.Find("Player");
         BossRB = GetComponent<Rigidbody>();
-        InvokeRepeating("Ability", 1, 12);
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-
+        float posx = GameObject.Find("boss skeleton").transform.position.x;
+        float posz = GameObject.Find("boss skeleton").transform.position.z;
+        InvokeRepeating("Ability", 1, 12);
     }
-        Vector3 GenerateSpawnPosition()
-    {
-        float yPos = .5f;
-        float xPos = ratx + Random.Range(-spawnRangeX, spawnRangeX);
-        float zPos = ratz + Random.Range(-spawnZMin, spawnZMax);
-        return new Vector3(xPos, yPos, zPos);
-    }
-
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (gameManager.GetComponent<GameManager>().isGameActive == true)
         {
@@ -51,7 +45,10 @@ public class BossScript2 : MonoBehaviour
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             playerhP = player.GetComponent<PlayerController>().hP;
         }
-
+        while (GameObject.FindGameObjectsWithTag("Boss").Length) > 0 
+        {
+            Ability()
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -74,6 +71,13 @@ public class BossScript2 : MonoBehaviour
         MobNumber = Random.Range(3,5);
         StartCoroutine(BuildUp(MobNumber));
         StartCoroutine(AbilityTimer());
+    }
+    Vector3 GenerateSpawnPosition()
+    {
+        float yPos = .5f;
+        float xPos = posx + Random.Range(-spawnRangeX, spawnRangeX);
+        float zPos = posz + Random.Range(-spawnZMin, spawnZMax);
+        return new Vector3(xPos, yPos, zPos);
     }
     IEnumerator BuildUp(int MobNumber)
     {
