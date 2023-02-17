@@ -864,7 +864,7 @@ MonoBehaviour:
   winScreen: {fileID: 307266939}
   isGameActive: 0
   winWaveNum: 10
-  deathSound: {fileID: 8300000, guid: a3f97aa1385f84b138d07c3325c9d29c, type: 3}
+  deathSound: {fileID: 8300000, guid: d2de7ad830dce4b0292dee01765602ed, type: 3}
 --- !u!4 &97922864
 Transform:
   m_ObjectHideFlags: 0
