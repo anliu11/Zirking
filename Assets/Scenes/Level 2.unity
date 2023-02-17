@@ -10869,6 +10869,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: boss skeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 8060108118714070923, guid: 9d369daaf3a0d4a26a8b83b92bd7874f, type: 3}
+      propertyPath: minions
+      value: 
+      objectReference: {fileID: 348177503913612169, guid: b14abe6d20b1f4995b86d4c39ea7f968, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d369daaf3a0d4a26a8b83b92bd7874f, type: 3}
 --- !u!1001 &1325733088

@@ -16,24 +16,26 @@ public class BossScript2 : MonoBehaviour
     public GameManager gameManager;
     public ParticleSystem damageParticle;
     public ParticleSystem chargeParticle;
+    private GameObject spawnManager;
+    private int bossalv;
+    public GameObject minions;
     private float spawnRangeX = 10;
-    private float spawnZMin = 5; // set min spawn Z
-    private float spawnZMax = 10; // set max spawn Z 
-    
+    private float spawnZMin = 15; // set min spawn Z
+    private float spawnZMax = 25; // set max spawn Z
     // Start is called before the first frame update
-    class Global
-    {
-        public float posx;
-        public float posz;
-    }
     void Start()
     {
         player = GameObject.Find("Player");
         BossRB = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        float posx = GameObject.Find("boss skeleton").transform.position.x;
-        float posz = GameObject.Find("boss skeleton").transform.position.z;
-        InvokeRepeating("Ability", 1, 12);
+    }
+    //Spawn position.
+    Vector3 GenerateSpawnPosition()
+    {
+        float yPos = .5f;
+        float xPos = Random.Range(-spawnRangeX, spawnRangeX);
+        float zPos = Random.Range(-spawnZMin, spawnZMax);
+        return new Vector3(xPos, yPos, zPos);
     }
     // Update is called once per frame
     public void Update()
@@ -44,10 +46,14 @@ public class BossScript2 : MonoBehaviour
             this.transform.LookAt(player.transform);
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             playerhP = player.GetComponent<PlayerController>().hP;
-        }
-        while (GameObject.FindGameObjectsWithTag("Boss").Length) > 0 
-        {
-            Ability()
+            //getting 
+            spawnManager = GameObject.Find("SpawnManager");
+            bossalv = spawnManager.GetComponent<SpawnManager>().bossCounter;
+            //ability
+            while (bossalv == 0)
+            {
+                
+            }
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -63,33 +69,5 @@ public class BossScript2 : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-    }
-    void Ability()
-    {
-        speed = 0;
-        chargeParticle.Play();
-        MobNumber = Random.Range(3,5);
-        StartCoroutine(BuildUp(MobNumber));
-        StartCoroutine(AbilityTimer());
-    }
-    Vector3 GenerateSpawnPosition()
-    {
-        float yPos = .5f;
-        float xPos = posx + Random.Range(-spawnRangeX, spawnRangeX);
-        float zPos = posz + Random.Range(-spawnZMin, spawnZMax);
-        return new Vector3(xPos, yPos, zPos);
-    }
-    IEnumerator BuildUp(int MobNumber)
-    {
-        yield return new WaitForSeconds(2);
-        for (int i = 0; i < MobNumber; i++)
-        {
-            Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
-        }
-        speed = 2.5f;
-    }
-    IEnumerator AbilityTimer()
-    {
-        yield return new WaitForSeconds(4);
     }
 }  
