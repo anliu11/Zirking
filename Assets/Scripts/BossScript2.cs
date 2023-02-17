@@ -21,8 +21,8 @@ public class BossScript2 : MonoBehaviour
     private float spawnRangeX = 10;
     private float spawnZMin = 15; // set min spawn Z
     private float spawnZMax = 25; // set max spawn Z
-    private float spawnTimer = 6;
-    private float elapsedtime;
+    private float spawnTimer = 2;
+    public float elapsedtime;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,12 +51,15 @@ public class BossScript2 : MonoBehaviour
             spawnManager = GameObject.Find("SpawnManager");
             bossalv = spawnManager.GetComponent<SpawnManager>().bossCounter;
             //ability if the boss is on the field
-            while (bossalv == 1)
+            if (bossalv == 1)
             {
                 elapsedtime += Time.deltaTime;
                 if (elapsedtime > spawnTimer)
                 {
+                    elapsedtime = 0;
                     Debug.Log("working");
+                    int minionamount = Random.Range(3,5);
+                    Instantiate(minions, GenerateSpawnPosition(), minions.transform.rotation);
                 }
             }
         }
