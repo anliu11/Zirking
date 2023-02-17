@@ -25,11 +25,14 @@ public class GameManager : MonoBehaviour
     public bool isGameActive = false;
     private float enemyNum;
     public float winWaveNum;
+    private AudioSource gameManagerAudio;
+    public AudioClip deathSound;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        gameManagerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,6 +51,7 @@ public class GameManager : MonoBehaviour
         if (playerHP <= 0)
         {
             GameOver();
+            gameManagerAudio.PlayOneShot(deathSound, 1.0f);
         }
 
         //Runs when player reaches level x
