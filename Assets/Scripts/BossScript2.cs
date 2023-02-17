@@ -6,7 +6,6 @@ using Random=UnityEngine.Random;
 
 public class BossScript2 : MonoBehaviour
 {
-    public GameObject enemyPrefab;
     private int MobNumber;
     public float speed;
     private Rigidbody BossRB;
@@ -46,13 +45,13 @@ public class BossScript2 : MonoBehaviour
             this.transform.LookAt(player.transform);
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             playerhP = player.GetComponent<PlayerController>().hP;
-            //getting 
+            //getting number from spawnManger to see if boss is on the field.
             spawnManager = GameObject.Find("SpawnManager");
             bossalv = spawnManager.GetComponent<SpawnManager>().bossCounter;
-            //ability
-            while (bossalv == 0)
+            //ability if the boss is on the field
+            while (bossalv == 1)
             {
-                
+                Instantiate(minions, GenerateSpawnPosition(), minions.transform.rotation);
             }
         }
     }
