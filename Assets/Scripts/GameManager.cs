@@ -15,16 +15,13 @@ public class GameManager : MonoBehaviour
     private GameObject player;
     private int wave;
     private int playerHP;
-    public Button restartButtonLose;
-    public Button returnButtonMain;
-    public Button returnButtonLose;
+    public Button restartButton;
+    public Button returnButton;
     public GameObject titleScreen;
     public GameObject playerHud;
     public GameObject healthBar;
-    public GameObject winScreen;
     public bool isGameActive = false;
     private float enemyNum;
-    public float winWaveNum;
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +48,7 @@ public class GameManager : MonoBehaviour
         }
 
         //Runs when player reaches level x
-        if (wave > winWaveNum)
+        if (wave > 10)
         {
             Win();
         }
@@ -66,7 +63,7 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         isGameActive = false;
-        winScreen.gameObject.SetActive(true);
+        returnButton.gameObject.SetActive(true);
         Debug.Log("Player has won");
     }
 
@@ -74,8 +71,8 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameOverText.gameObject.SetActive(true);
-        restartButtonLose.gameObject.SetActive(true);
-        returnButtonLose.gameObject.SetActive(true);
+        restartButton.gameObject.SetActive(true);
+        returnButton.gameObject.SetActive(true);
         isGameActive = false;
         Debug.Log("Player Died");
     }
@@ -90,7 +87,6 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         isGameActive = true;
-        Debug.Log("isGameActive is true");
         spawnManager = GameObject.Find("SpawnManager");
         wave = spawnManager.GetComponent<SpawnManager>().waveCount - 1;
         waveNumber.text = "Wave: " + wave.ToString();
@@ -101,7 +97,7 @@ public class GameManager : MonoBehaviour
 
         player = GameObject.Find("Player");
         titleScreen.gameObject.SetActive(false);
-        returnButtonMain.gameObject.SetActive(false);
+        returnButton.gameObject.SetActive(false);
         playerHud.gameObject.SetActive(true);
         healthBar.SetActive(true);
     }
