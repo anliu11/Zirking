@@ -58,8 +58,14 @@ public class BossScript2 : MonoBehaviour
                 {
                     elapsedtime = 0;
                     Debug.Log("working");
-                    int minionamount = Random.Range(3,5);
-                    Instantiate(minions, GenerateSpawnPosition(), minions.transform.rotation);
+                    int minionamount = Random.Range(2,3);
+                    int i = 0;
+                    while (i <= minionamount)
+                    {
+                        Instantiate(minions, GenerateSpawnPosition(), minions.transform.rotation);
+                        i += 1;
+                    }
+                    
                 }
             }
         }

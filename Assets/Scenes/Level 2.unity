@@ -10871,7 +10871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8060108118714070923, guid: 9d369daaf3a0d4a26a8b83b92bd7874f, type: 3}
       propertyPath: speed
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8060108118714070923, guid: 9d369daaf3a0d4a26a8b83b92bd7874f, type: 3}
       propertyPath: minions
