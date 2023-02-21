@@ -26,8 +26,7 @@ public class PlayerController : MonoBehaviour
     public bool BossDps;
     private AudioSource playerAudio;
     public AudioClip gunShootSound;
-    public AudioClip healthKitSound;
-   
+    public AudioClip healthKitSound;   
 
     // Start is called before the first frame update
     void Start()
