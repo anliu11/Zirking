@@ -18,9 +18,9 @@ public class BossScript2 : MonoBehaviour
     private GameObject spawnManager;
     private int bossalv;
     public GameObject minions;
-    private float spawnRangeX = 10;
-    private float spawnZMin = 15; // set min spawn Z
-    private float spawnZMax = 25; // set max spawn Z
+    private float spawnRangeX = 5;
+    private float spawnZMin = 5; // set min spawn Z
+    private float spawnZMax = 10; // set max spawn Z
     private float spawnTimer = 2;
     public float elapsedtime;
     // Start is called before the first frame update
@@ -34,8 +34,8 @@ public class BossScript2 : MonoBehaviour
     Vector3 GenerateSpawnPosition()
     {
         float yPos = .5f;
-        float xPos = Random.Range(-spawnRangeX, spawnRangeX);
-        float zPos = Random.Range(-spawnZMin, spawnZMax);
+        float xPos = transform.position.x + Random.Range(-spawnRangeX, spawnRangeX);
+        float zPos = transform.position.z + Random.Range(-spawnZMin, spawnZMax);
         return new Vector3(xPos, yPos, zPos);
     }
     // Update is called once per frame
