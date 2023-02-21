@@ -3551,7 +3551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 348177503913612169, guid: b14abe6d20b1f4995b86d4c39ea7f968, type: 3}
   bossPrefab: {fileID: 3049647304677200206, guid: 9d369daaf3a0d4a26a8b83b92bd7874f, type: 3}
-  medpackPrefab: {fileID: 3234095999662694036, guid: 11573369437d746b18de5af3ea17f7ec, type: 3}
+  medpackPrefab: {fileID: 3105189679447694443, guid: 68e5b55e3e03b48d0b0813eb0c4ef5e5, type: 3}
   waveCount: 1
   bossCount: 1
   bossCounter: 0
