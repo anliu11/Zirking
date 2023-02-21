@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         if (playerHP <= 0)
         {
             GameOver();
-            gameManagerAudio.PlayOneShot(deathSound, 1.0f);
+            gameManagerAudio.PlayOneShot(deathSound, 0.3f);
         }
 
         //Runs when player reaches level x
