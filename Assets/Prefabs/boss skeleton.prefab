@@ -164,14 +164,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160e98b1a39d146098ec3121e8bd2f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 348177503913612169, guid: b14abe6d20b1f4995b86d4c39ea7f968, type: 3}
-  speed: 7
+  speed: 3
   player: {fileID: 0}
   hitPoints: 200
   gameManager: {fileID: 0}
-  bossdps: 0
   damageParticle: {fileID: 1237695011491050074, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
   chargeParticle: {fileID: 1237695011491050074, guid: 2a4e2163ee704461697e5d646b3b404c, type: 3}
+  minions: {fileID: 348177503913612169, guid: b14abe6d20b1f4995b86d4c39ea7f968, type: 3}
+  elapsedtime: 0
 --- !u!1 &5546603867992332464
 GameObject:
   m_ObjectHideFlags: 0

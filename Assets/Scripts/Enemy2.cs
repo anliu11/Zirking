@@ -12,6 +12,11 @@ public class Enemy2 : MonoBehaviour
     public int hitPoints;
     public GameManager gameManager;
     public ParticleSystem damageParticle;
+    private float spawnRangeX = 10;
+    private float spawnZMin = 15; // set min spawn Z
+    private float spawnZMax = 25; // set max spawn Z
+    private float sKpx;
+    private float sKpz;
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +24,14 @@ public class Enemy2 : MonoBehaviour
         player = GameObject.Find("Player");
         enemyRB = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-       
     }
 
     // Update is called once per frame
     void Update()
     {
+        sKpx = transform.position.x;
+        sKpz = transform.position.z;
+     
         //looks at the player
         if (gameManager.GetComponent<GameManager>().isGameActive == true)
         {
