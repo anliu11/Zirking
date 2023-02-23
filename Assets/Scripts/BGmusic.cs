@@ -23,7 +23,7 @@ public class BGmusic : MonoBehaviour
     {
         waveNum = gameManager.GetComponent<GameManager>().wave;
 
-        if(waveNum == 3 && bossWaveActive == false)
+        if(waveNum == 10 && bossWaveActive == false)
         {
             audioSource.Stop();
             audioSource.clip = bossMusic;
