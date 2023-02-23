@@ -6,6 +6,8 @@ public class ObjectHP : MonoBehaviour
 {
     public int objectHP;
     public GameObject parentObject;
+    public GameObject destroySoundPrefab;
+    public GameObject destroyParticlePrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +36,11 @@ public class ObjectHP : MonoBehaviour
 
             if (objectHP <= 0)
             {
+                Instantiate(destroySoundPrefab, transform.position, Quaternion.identity);
+                Instantiate(destroyParticlePrefab, transform.position, Quaternion.identity);
+               
                 Destroy(parentObject);
+ 
             }
         }
     }
