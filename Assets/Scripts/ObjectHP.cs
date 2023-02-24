@@ -5,14 +5,17 @@ using UnityEngine;
 public class ObjectHP : MonoBehaviour
 {
     public int objectHP;
+    private int wave;
     public GameObject parentObject;
     public GameObject destroySoundPrefab;
     public GameObject destroyParticlePrefab;
+    public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        
     }
 
     // Update is called once per frame
@@ -40,8 +43,9 @@ public class ObjectHP : MonoBehaviour
                 Instantiate(destroyParticlePrefab, transform.position, Quaternion.identity);
                
                 Destroy(parentObject);
- 
+              
             }
+    
         }
     }
 }
