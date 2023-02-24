@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI enemyCount;
     private GameObject spawnManager;
     private GameObject player;
-    private int wave;
+    public int wave;
     private int playerHP;
     public Button restartButtonLose;
     public Button returnButtonMain;
