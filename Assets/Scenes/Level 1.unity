@@ -4582,6 +4582,7 @@ MonoBehaviour:
   BossDps: 0
   gunShootSound: {fileID: 8300000, guid: 0cfe12a73e38146e8829594161e60333, type: 3}
   healthKitSound: {fileID: 8300000, guid: bea2e75ce572a4fadb8f9eaf1e70fd00, type: 3}
+  bonk: {fileID: 0}
 --- !u!54 &424464497
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15557,6 +15558,7 @@ MonoBehaviour:
   BossDps: 0
   gunShootSound: {fileID: 8300000, guid: 0cfe12a73e38146e8829594161e60333, type: 3}
   healthKitSound: {fileID: 8300000, guid: bea2e75ce572a4fadb8f9eaf1e70fd00, type: 3}
+  bonk: {fileID: 8300000, guid: a3f97aa1385f84b138d07c3325c9d29c, type: 3}
 --- !u!82 &1542752524
 AudioSource:
   m_ObjectHideFlags: 0
