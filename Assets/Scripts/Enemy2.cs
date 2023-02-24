@@ -15,9 +15,9 @@ public class Enemy2 : MonoBehaviour
     private float spawnRangeX = 10;
     private float spawnZMin = 15; // set min spawn Z
     private float spawnZMax = 25; // set max spawn Z
+    // part of finding bounds system
     private float sKpx;
     private float sKpz;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +29,33 @@ public class Enemy2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         sKpx = transform.position.x;
         sKpz = transform.position.z;
-     
+        
+        //--trying to make it so that the enemy delets itself if it spawns out of bounds--
+        if (((sKpx < -spawnRangeX || sKpx > spawnRangeX) && (sKpz < spawnZMin || sKpz > spawnZMax)))
+        {
+            Destroy(gameObject);
+        }
+        /*
+        //type two works.
+        if (sKpx < -spawnRangeX)
+        {
+            if (sKpx > spawnRangeX)
+            {
+                Destroy(gameObject);
+            }
+        }
+        if (sKpz < spawnZMin)
+        {
+            if (sKpz > spawnZMax)
+            {
+            Destroy(gameObject);
+            }
+        }
+        //make type 3
+        */
         //looks at the player
         if (gameManager.GetComponent<GameManager>().isGameActive == true)
         {

@@ -23,17 +23,17 @@ public class BossScript2 : MonoBehaviour
     private float spawnZMax = 10; // set max spawn Z
     private float spawnTimer = 2;
     public float elapsedtime;
-    private float spawnboundx = 10;
-    private float spawnboundzmin = 15;
-    private float spawnboundzmax = 25;
-    private float sKpx;
-    private float sKpz;
+
+    /*
     private gameObject mob;
+    */
     // Start is called before the first frame update
     void Start()
     {
         //getting object skelly lol so that we can get its cords.
+        /*
         mob = GameObject.Find("skeleton 1(Clone)");
+        */
         player = GameObject.Find("Player");
         BossRB = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
@@ -73,12 +73,6 @@ public class BossScript2 : MonoBehaviour
                     {
                         Instantiate(minions, GenerateSpawnPosition(), minions.transform.rotation);
                         i += 1;
-                        //try to make it find skeleton position check if its out of bounds, delete and remove 1 from count.
-                        /*if (gameObject.Find("skeleton 1"))
-                        {
-
-                        }
-                        */
                     }
                     
                 }
