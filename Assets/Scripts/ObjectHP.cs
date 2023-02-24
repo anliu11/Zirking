@@ -21,7 +21,13 @@ public class ObjectHP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameManager.GetComponent<GameManager>().wave == 10)
+        {
+            Instantiate(destroySoundPrefab, transform.position, Quaternion.identity);
+            Instantiate(destroyParticlePrefab, transform.position, Quaternion.identity);
 
+            Destroy(parentObject);
+        }
     }
 
 
