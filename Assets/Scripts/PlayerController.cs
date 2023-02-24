@@ -143,10 +143,11 @@ public class PlayerController : MonoBehaviour
             Vector3 awayyFromPlayer = collision.gameObject.transform.position - transform.position;
             enemyRigidBody.AddForce(awayyFromPlayer * 5, ForceMode.Impulse);
 
-            playerAudio.PlayOneShot(bonk, 1f);
+            playerAudio.PlayOneShot(bonk, 0.8f);
 
             if (hP <= 0)
             {
+                gameManager.PlayDeathSound();
                 gameObject.SetActive(false);
             }
         }
@@ -159,10 +160,11 @@ public class PlayerController : MonoBehaviour
                 hP -= damage;
                 healthBar.SetHealth(hP);
 
-                playerAudio.PlayOneShot(bonk, 1f);
+                playerAudio.PlayOneShot(bonk, 0.8f);
 
                 if (hP <= 0)
                 {
+                    gameManager.PlayBossDeathSound();
                     gameObject.SetActive(false);
                 }
             }
@@ -172,11 +174,12 @@ public class PlayerController : MonoBehaviour
                 hP -= damage;
                 healthBar.SetHealth(hP);
 
-                playerAudio.PlayOneShot(bonk, 1f);
+                playerAudio.PlayOneShot(bonk, 0.8f);
 
 
                 if (hP <= 0)
                 {
+                    gameManager.PlayBossDeathSound();
                     gameObject.SetActive(false);
                 }
             }

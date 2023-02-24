@@ -865,7 +865,8 @@ MonoBehaviour:
   winScreen: {fileID: 307266939}
   isGameActive: 0
   winWaveNum: 10
-  deathSound: {fileID: 8300000, guid: d2de7ad830dce4b0292dee01765602ed, type: 3}
+  deathSound: {fileID: 8300000, guid: c1b37498e5dee49689d8ac88b6b53465, type: 3}
+  bossDeathSound: {fileID: 8300000, guid: d2de7ad830dce4b0292dee01765602ed, type: 3}
 --- !u!4 &97922864
 Transform:
   m_ObjectHideFlags: 0
@@ -2109,7 +2110,7 @@ Transform:
   - {fileID: 1666707830}
   - {fileID: 648435751}
   m_Father: {fileID: 542736164}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &221539185
 PrefabInstance:
@@ -4486,7 +4487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: 6501c668e8bc246c8b507a146c67c719, type: 3}
       propertyPath: m_RootOrder
-      value: 32
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: 6501c668e8bc246c8b507a146c67c719, type: 3}
       propertyPath: m_LocalScale.x
@@ -6078,15 +6079,15 @@ Transform:
   - {fileID: 1141937209}
   - {fileID: 1302735761}
   - {fileID: 466964996}
-  - {fileID: 1614354362}
-  - {fileID: 1088848243}
-  - {fileID: 907934164}
   - {fileID: 1042994999}
   - {fileID: 1791733326}
   - {fileID: 2008174595}
   - {fileID: 217745670}
   - {fileID: 1212347018}
   - {fileID: 906325054}
+  - {fileID: 1614354362}
+  - {fileID: 1088848243}
+  - {fileID: 907934164}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9238,7 +9239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4870167790249810, guid: 94bfe88420d654f8792bd257130771a4, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4870167790249810, guid: 94bfe88420d654f8792bd257130771a4, type: 3}
       propertyPath: m_LocalScale.x
@@ -9727,7 +9728,7 @@ Transform:
   - {fileID: 265068676}
   - {fileID: 456680523}
   m_Father: {fileID: 542736164}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &907934164 stripped
 Transform:
@@ -10914,7 +10915,7 @@ Transform:
   - {fileID: 1945890562}
   - {fileID: 510750409}
   m_Father: {fileID: 542736164}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1046642382
 GameObject:
@@ -12539,7 +12540,7 @@ Transform:
   - {fileID: 1938406330}
   - {fileID: 587168844}
   m_Father: {fileID: 542736164}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1214474152 stripped
 GameObject:
@@ -15557,7 +15558,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15693,7 +15694,7 @@ MonoBehaviour:
   BossDps: 0
   gunShootSound: {fileID: 8300000, guid: 0cfe12a73e38146e8829594161e60333, type: 3}
   healthKitSound: {fileID: 8300000, guid: bea2e75ce572a4fadb8f9eaf1e70fd00, type: 3}
-  bonk: {fileID: 8300000, guid: a3f97aa1385f84b138d07c3325c9d29c, type: 3}
+  bonk: {fileID: 8300000, guid: 1e59ff81fb6d149db910cbc2ebc2716b, type: 3}
 --- !u!82 &1542752524
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17536,7 +17537,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 46e93f97b158b44288c242679cdd53b7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: eae8add22c492477991c0dca8a79c8e9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -18566,7 +18567,7 @@ Transform:
   - {fileID: 1831957966}
   - {fileID: 1164679152}
   m_Father: {fileID: 542736164}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1794133391
 PrefabInstance:
@@ -19290,7 +19291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4353972167979376, guid: 9616a1448d86e48e9aa6af7376facab7, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4353972167979376, guid: 9616a1448d86e48e9aa6af7376facab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -20071,7 +20072,7 @@ Transform:
   - {fileID: 446885544}
   - {fileID: 289147694}
   m_Father: {fileID: 542736164}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2009592423
 PrefabInstance:
