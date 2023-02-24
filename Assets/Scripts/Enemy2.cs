@@ -54,7 +54,6 @@ public class Enemy2 : MonoBehaviour
             Destroy(gameObject);
             }
         }
-        //make type 3
         */
         //looks at the player
         if (gameManager.GetComponent<GameManager>().isGameActive == true)
