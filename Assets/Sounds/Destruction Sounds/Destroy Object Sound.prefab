@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4265353656356279642}
   - component: {fileID: 4265353656356279641}
   m_Layer: 0
-  m_Name: Destroy Car Sound
+  m_Name: Destroy Object Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d1b9732c1b72c4c8ea0f0268ef835884, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 766c25f4d4ed54ff5ae9e2b48cbf2eda, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
