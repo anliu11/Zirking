@@ -26,7 +26,8 @@ public class PlayerController : MonoBehaviour
     public bool BossDps;
     private AudioSource playerAudio;
     public AudioClip gunShootSound;
-    public AudioClip healthKitSound;   
+    public AudioClip healthKitSound;
+    public AudioClip bonk;
 
     // Start is called before the first frame update
     void Start()
@@ -142,6 +143,8 @@ public class PlayerController : MonoBehaviour
             Vector3 awayyFromPlayer = collision.gameObject.transform.position - transform.position;
             enemyRigidBody.AddForce(awayyFromPlayer * 5, ForceMode.Impulse);
 
+            playerAudio.PlayOneShot(bonk, 1f);
+
             if (hP <= 0)
             {
                 gameObject.SetActive(false);
@@ -155,6 +158,9 @@ public class PlayerController : MonoBehaviour
                 int damage = Random.Range(25,30);
                 hP -= damage;
                 healthBar.SetHealth(hP);
+
+                playerAudio.PlayOneShot(bonk, 1f);
+
                 if (hP <= 0)
                 {
                     gameObject.SetActive(false);
@@ -165,6 +171,10 @@ public class PlayerController : MonoBehaviour
                 int damage = Random.Range(20,25);
                 hP -= damage;
                 healthBar.SetHealth(hP);
+
+                playerAudio.PlayOneShot(bonk, 1f);
+
+
                 if (hP <= 0)
                 {
                     gameObject.SetActive(false);
