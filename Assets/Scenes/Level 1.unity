@@ -865,7 +865,7 @@ MonoBehaviour:
   winScreen: {fileID: 307266939}
   isGameActive: 0
   winWaveNum: 10
-  deathSound: {fileID: 8300000, guid: 9fdc2f0c1125447639e764d90cc6242b, type: 3}
+  deathSound: {fileID: 8300000, guid: c1b37498e5dee49689d8ac88b6b53465, type: 3}
 --- !u!4 &97922864
 Transform:
   m_ObjectHideFlags: 0
@@ -15557,7 +15557,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
       propertyPath: m_LocalPosition.x
