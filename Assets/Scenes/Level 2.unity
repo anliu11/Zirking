@@ -875,6 +875,7 @@ MonoBehaviour:
   waveNumber: {fileID: 268420177}
   gameOverText: {fileID: 553297126}
   enemyCount: {fileID: 708365662}
+  wave: 0
   restartButtonLose: {fileID: 1128313207}
   returnButtonMain: {fileID: 1236554877}
   returnButtonLose: {fileID: 490531127}
