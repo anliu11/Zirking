@@ -866,6 +866,7 @@ MonoBehaviour:
   isGameActive: 0
   winWaveNum: 10
   deathSound: {fileID: 8300000, guid: c1b37498e5dee49689d8ac88b6b53465, type: 3}
+  bossDeathSound: {fileID: 8300000, guid: d2de7ad830dce4b0292dee01765602ed, type: 3}
 --- !u!4 &97922864
 Transform:
   m_ObjectHideFlags: 0
@@ -4486,7 +4487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: 6501c668e8bc246c8b507a146c67c719, type: 3}
       propertyPath: m_RootOrder
-      value: 32
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: 6501c668e8bc246c8b507a146c67c719, type: 3}
       propertyPath: m_LocalScale.x
@@ -9238,7 +9239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4870167790249810, guid: 94bfe88420d654f8792bd257130771a4, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4870167790249810, guid: 94bfe88420d654f8792bd257130771a4, type: 3}
       propertyPath: m_LocalScale.x
@@ -19290,7 +19291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4353972167979376, guid: 9616a1448d86e48e9aa6af7376facab7, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4353972167979376, guid: 9616a1448d86e48e9aa6af7376facab7, type: 3}
       propertyPath: m_LocalScale.x

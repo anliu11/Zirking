@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public float winWaveNum;
     private AudioSource gameManagerAudio;
     public AudioClip deathSound;
+    public AudioClip bossDeathSound;
     private bool deathInstance = false;
 
 
@@ -53,14 +54,14 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
 
-            if (playerHP <= 0 && deathInstance == false)
-            {
-                gameManagerAudio.Stop();
-                gameManagerAudio.clip = deathSound;
-                gameManagerAudio.Play();
+            //if (playerHP <= 0 && deathInstance == false)
+            //{
+            //    gameManagerAudio.Stop();
+            //    gameManagerAudio.clip = deathSound;
+            //    gameManagerAudio.Play();
                 //gameManagerAudio.PlayOneShot(deathSound, 0.3f);
-                deathInstance = true;
-            }
+            //    deathInstance = true;
+            //}
         }
 
         //Runs when player reaches level x
@@ -117,5 +118,19 @@ public class GameManager : MonoBehaviour
         returnButtonMain.gameObject.SetActive(false);
         playerHud.gameObject.SetActive(true);
         healthBar.SetActive(true);
+    }
+
+    public void PlayDeathSound()
+    {
+        gameManagerAudio.Stop();
+        gameManagerAudio.clip = deathSound;
+        gameManagerAudio.Play();
+    }
+
+    public void PlayBossDeathSound()
+    {
+        gameManagerAudio.Stop();
+        gameManagerAudio.clip = bossDeathSound;
+        gameManagerAudio.Play();
     }
 }
