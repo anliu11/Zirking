@@ -886,6 +886,7 @@ MonoBehaviour:
   isGameActive: 0
   winWaveNum: 10
   deathSound: {fileID: 8300000, guid: c1b37498e5dee49689d8ac88b6b53465, type: 3}
+  bossDeathSound: {fileID: 8300000, guid: d2de7ad830dce4b0292dee01765602ed, type: 3}
 --- !u!4 &97922864
 Transform:
   m_ObjectHideFlags: 0
