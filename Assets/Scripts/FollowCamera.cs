@@ -7,7 +7,7 @@ public class FollowCamera : MonoBehaviour
     public GameObject player;
     public float smooth = 0.3f;
     private Vector3 velocity = Vector3.zero;
-    public Vector3 offset = new Vector3(0, 15, 0);
+    public Vector3 offset = new Vector3(0, 20, 0);
 
     //Start is called before the first frame update
     void Start()
