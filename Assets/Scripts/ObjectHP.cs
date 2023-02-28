@@ -6,6 +6,7 @@ public class ObjectHP : MonoBehaviour
 {
     public int objectHP;
     private int wave;
+    public int bounceMultiplier;
     public GameObject parentObject;
     public GameObject destroySoundPrefab;
     public GameObject destroyParticlePrefab;
@@ -39,7 +40,7 @@ public class ObjectHP : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
-            enemyRigidBody.AddForce(awayyFromPlayer * 3, ForceMode.Impulse);
+            enemyRigidBody.AddForce(awayyFromPlayer * bounceMultiplier, ForceMode.Impulse);
             Debug.Log("Object was hit");
             objectHP -= damage;
 
