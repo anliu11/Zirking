@@ -4663,6 +4663,7 @@ Transform:
   - {fileID: 1062122536}
   - {fileID: 103518571}
   - {fileID: 1455060861}
+  - {fileID: 1567447239}
   - {fileID: 498983958}
   - {fileID: 118099899}
   - {fileID: 1486414396}
@@ -4674,7 +4675,6 @@ Transform:
   - {fileID: 766512164}
   - {fileID: 1984459078}
   - {fileID: 43110845}
-  - {fileID: 1567447239}
   - {fileID: 306174478}
   - {fileID: 335443527}
   - {fileID: 1067165687}
@@ -10243,9 +10243,9 @@ RectTransform:
   m_Father: {fileID: 906181765}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 90}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -254}
   m_SizeDelta: {x: 75, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1236554876
@@ -13151,7 +13151,7 @@ Transform:
   - {fileID: 824777660}
   - {fileID: 408918419}
   m_Father: {fileID: 542736164}
-  m_RootOrder: 27
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1571427063
 PrefabInstance:
