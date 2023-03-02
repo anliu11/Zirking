@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random=UnityEngine.Random;
 
-public class BossScript3 : MonoBehaviour
+public class BossScript4 : MonoBehaviour
 {
 
     public float speed;
@@ -13,13 +13,8 @@ public class BossScript3 : MonoBehaviour
     public GameObject enemyPrefab;
     public int hitPoints;
     private int playerhP;
-    public float spawnTimer = 2;
-    public float elapsedtime;
-    public int bossalv;
     public GameManager gameManager;
-    public GameObject spawnManager;
     public ParticleSystem damageParticle;
-    public ParticleSystem chargeParticle;
 
     private float spawnMinX = -15;
     private float spawnMaxX = 17;
@@ -53,7 +48,6 @@ public class BossScript3 : MonoBehaviour
         }
         return point;
     }
-
     //Creates a spawn position for a zombie.
     Vector3 GenerateSpawnPosition()
     {
@@ -68,8 +62,8 @@ public class BossScript3 : MonoBehaviour
         player = GameObject.Find("Player");
         BossRB = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        StartCoroutine(SpawnEnemy());
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -79,24 +73,6 @@ public class BossScript3 : MonoBehaviour
             this.transform.LookAt(player.transform);
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             playerhP = player.GetComponent<PlayerController>().hP;
-            spawnManager = GameObject.Find("SpawnManager");
-            bossalv = spawnManager.GetComponent<SpawnManager>().bossCounter;
-            if (bossalv == 1)
-            {
-                elapsedtime += Time.deltaTime;
-                if (elapsedtime > spawnTimer)
-                {
-                    elapsedtime = 0;
-                    Debug.Log("working");
-                    int minionamount = Random.Range(2,3);
-                    int i = 0;
-                    while (i <= minionamount)
-                    {
-                        Instantiate(enemyPrefab, GenerateRadialSpawnPosition(), enemyPrefab.transform.rotation);
-                        i += 1;
-                    }
-                }
-            }
         }
 
     }
@@ -114,4 +90,14 @@ public class BossScript3 : MonoBehaviour
             }
         }
     }
-}
+    IEnumerator SpawnEnemy()
+    {
+        int count = 100;
+        while (count > 0)
+        {
+            yield return new WaitForSeconds(.25f);
+            Instantiate(enemyPrefab, GenerateRadialSpawnPosition(), enemyPrefab.transform.rotation);
+            --count;
+        }
+    }
+}  
