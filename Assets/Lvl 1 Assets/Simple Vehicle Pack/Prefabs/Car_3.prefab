@@ -359,8 +359,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e35aed33eb44f39b50950c0353e879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectHP: 400
-  bounceMultiplier: 3
+  objectHP: 500
+  damageMultipler: 0
   parentObject: {fileID: 1646981259178978}
   destroySoundPrefab: {fileID: 4265353656356279640, guid: 4ef1061c2d2704c968de3c18f3a4c56c, type: 3}
   destroyParticlePrefab: {fileID: 1368782967120030, guid: bdbdcfd7c511df246af535551f842df5, type: 3}

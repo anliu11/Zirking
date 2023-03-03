@@ -6,7 +6,10 @@ public class ObjectHP : MonoBehaviour
 {
     public int objectHP;
     private int wave;
-    public int bounceMultiplier;
+    public int damageMultipler;
+
+    private bool active = true;
+
     public GameObject parentObject;
     public GameObject destroySoundPrefab;
     public GameObject destroyParticlePrefab;
@@ -16,7 +19,7 @@ public class ObjectHP : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        
+
     }
 
     // Update is called once per frame
@@ -29,30 +32,44 @@ public class ObjectHP : MonoBehaviour
 
             Destroy(parentObject);
         }
+  
     }
-
-
     private void OnCollisionEnter(Collision collision)
     {
-        int damage = 20;
-        Rigidbody enemyRigidBody = collision.gameObject.GetComponent<Rigidbody>();
-        Vector3 awayyFromPlayer = collision.gameObject.transform.position - transform.position;
-
         if (collision.gameObject.tag == "Enemy")
         {
-            enemyRigidBody.AddForce(awayyFromPlayer * bounceMultiplier, ForceMode.Impulse);
-            Debug.Log("Object was hit");
-            objectHP -= damage;
+            damageMultipler += 1;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy" && damageMultipler >= 0)
+        {
+            damageMultipler -= 1;
+        }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        int damage = 25;
+       
+        if (collision.gameObject.tag == "Enemy" && active == true)
+        {
+            active = false;
+            objectHP -= damage*damageMultipler;
+            StartCoroutine(hitCooldown());
+        
 
             if (objectHP <= 0)
             {
                 Instantiate(destroySoundPrefab, transform.position, Quaternion.identity);
                 Instantiate(destroyParticlePrefab, transform.position, Quaternion.identity);
-               
                 Destroy(parentObject);
-              
             }
-    
         }
+    }
+    IEnumerator hitCooldown()
+    {
+        yield return new WaitForSeconds(1f);
+        active = true;
     }
 }
