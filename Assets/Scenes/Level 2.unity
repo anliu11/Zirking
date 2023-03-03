@@ -1281,13 +1281,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5165a44c629741aaae6de101bbeaed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 0
   player: {fileID: 0}
   enemyPrefab: {fileID: 348177503913612169, guid: b14abe6d20b1f4995b86d4c39ea7f968, type: 3}
   hitPoints: 200
   spawnTimer: 2
   elapsedtime: 0
   bossalv: 0
+  minionsalv: 0
   gameManager: {fileID: 0}
   spawnManager: {fileID: 0}
   damageParticle: {fileID: 0}
