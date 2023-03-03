@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198334730229523276}
   - component: {fileID: 199474463707621028}
   m_Layer: 0
-  m_Name: Explosion01_HighPerformance
+  m_Name: Big_Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
