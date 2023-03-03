@@ -29,12 +29,15 @@ public class GameManager : MonoBehaviour
     public AudioClip deathSound;
     public AudioClip bossDeathSound;
     private bool deathInstance = false;
+    private GameObject cursorManeger;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         gameManagerAudio = GetComponent<AudioSource>();
+        cursorManeger = GameObject.Find("Cursor Maneger");
     }
 
     // Update is called once per frame
@@ -118,6 +121,8 @@ public class GameManager : MonoBehaviour
         returnButtonMain.gameObject.SetActive(false);
         playerHud.gameObject.SetActive(true);
         healthBar.SetActive(true);
+
+        cursorManeger.GetComponent<CursorManeger>().CrossHairCursor();
     }
 
     public void PlayDeathSound()
