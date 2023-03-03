@@ -16,6 +16,7 @@ public class BossScript3 : MonoBehaviour
     public float spawnTimer = 2;
     public float elapsedtime;
     public int bossalv;
+    public int minionsalv;
     public GameManager gameManager;
     public GameObject spawnManager;
     public ParticleSystem damageParticle;
@@ -25,7 +26,7 @@ public class BossScript3 : MonoBehaviour
     private float spawnMaxX = 17;
     private float spawnZMin = -15; // set min spawn Z
     private float spawnZMax = 25; // set max spawn Z
-    private float spawnRadius = 10;
+    private float spawnRadius = 5;
 
     // Returns true if the point is in the bounding box defined by the x and z min/max
     bool CheckBoundingBox(Vector3 point, float minX, float maxX, float minZ, float maxZ)
@@ -81,6 +82,7 @@ public class BossScript3 : MonoBehaviour
             playerhP = player.GetComponent<PlayerController>().hP;
             spawnManager = GameObject.Find("SpawnManager");
             bossalv = spawnManager.GetComponent<SpawnManager>().bossCounter;
+            minionsalv = spawnManager.GetComponent<SpawnManager>().enemyCount;
             if (bossalv == 1)
             {
                 elapsedtime += Time.deltaTime;
@@ -88,7 +90,10 @@ public class BossScript3 : MonoBehaviour
                 {
                     elapsedtime = 0;
                     Debug.Log("working");
+                    /*
                     int minionamount = Random.Range(2,3);
+                    */
+                    int minionamount = 10;
                     int i = 0;
                     while (i <= minionamount)
                     {
