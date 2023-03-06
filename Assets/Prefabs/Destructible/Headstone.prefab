@@ -111,7 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectHP: 100
-  bounceMultiplier: 9
+  damageMultipler: 0
+  destroyWaitTime: 3
   parentObject: {fileID: 1305224938994469085}
   destroySoundPrefab: {fileID: 4265353656356279640, guid: 4ef1061c2d2704c968de3c18f3a4c56c, type: 3}
   destroyParticlePrefab: {fileID: 1685874166552172, guid: 2dc5347a44240ea4597cafb2d1d7c160, type: 3}

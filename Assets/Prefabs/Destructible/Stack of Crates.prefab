@@ -286,6 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectHP: 250
   damageMultipler: 0
+  destroyWaitTime: 2
   parentObject: {fileID: 7199217048673364577}
   destroySoundPrefab: {fileID: 4265353656356279640, guid: 4ef1061c2d2704c968de3c18f3a4c56c, type: 3}
   destroyParticlePrefab: {fileID: 1494083766182838, guid: 151b49b11ab5924429acc76ead6435fa, type: 3}
