@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.Find("Player");
         enemyRB = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-       
+
     }
 
     // Update is called once per frame
@@ -33,10 +33,16 @@ public class Enemy : MonoBehaviour
         }
 
     }
-
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject && hitPoints <= 0)
+        {
+            gameObject.transform.position = new Vector3(100, 0, 100);
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
-        int damage = Random.Range(15,25);
+        int damage = Random.Range(15, 25);
         if (other.gameObject.CompareTag("Projectile"))
         {
             Destroy(other.gameObject);
@@ -44,19 +50,25 @@ public class Enemy : MonoBehaviour
             damageParticle.Play();
             if (hitPoints <= 0)
             {
-                Destroy(gameObject);
+                StartCoroutine(waitUntilDestroy());
+
             }
             speed = 0;
             StartCoroutine(staggeredUnit());
 
         }
     }
+
     IEnumerator staggeredUnit()
     {
         yield return new WaitForSeconds(0.1f);
         speed = 3;
     }
-
+    IEnumerator waitUntilDestroy()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
+    }
     public void StartGame()
     {
 
