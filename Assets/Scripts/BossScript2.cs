@@ -10,21 +10,71 @@ public class BossScript2 : MonoBehaviour
     public float speed;
     private Rigidbody BossRB;
     public GameObject player;
+    public GameObject enemyPrefab;
     public int hitPoints;
     private int playerhP;
+    public float spawnTimer = 5;
+    public float elapsedtime;
+    public int bossalv;
+    public int minionsalv;
     public GameManager gameManager;
-    public bool bossdps;
+    public GameObject spawnManager;
     public ParticleSystem damageParticle;
     public ParticleSystem chargeParticle;
 
+    private float spawnMinX = -15;
+    private float spawnMaxX = 17;
+    private float spawnZMin = -15; // set min spawn Z
+    private float spawnZMax = 25; // set max spawn Z
+    private float spawnRadius = 5;
+
+    IEnumerator BuildUp()
+    {
+        speed = 0;
+        yield return new WaitForSeconds(2);
+        speed = 3;
+    }
+    // Returns true if the point is in the bounding box defined by the x and z min/max
+    bool CheckBoundingBox(Vector3 point, float minX, float maxX, float minZ, float maxZ)
+    {
+        return minX < point.x && point.x < maxX && minZ < point.z && point.z < maxZ;
+    }
+
+    // Returns true if the point is within the radius of the Boss's position
+    bool CheckBoundingRadius(Vector3 point, float radius)
+    {
+        return Vector3.Distance(point, transform.position) < radius;
+    }
+
+    // Repeatedly generates a spawn position until it is within a specific
+    // radius of the boss prefab and within the bounding box of the "level"
+    Vector3 GenerateRadialSpawnPosition()
+    {
+        Vector3 point = GenerateSpawnPosition();
+        Debug.Log("Point: " + point);
+        while (!(CheckBoundingBox(point, spawnMinX, spawnMaxX, spawnZMin, spawnZMax)
+                && CheckBoundingRadius(point, spawnRadius)))
+        {
+            point = GenerateSpawnPosition();
+            Debug.Log("while Point: " + point);
+        }
+        return point;
+    }
+
+    //Creates a spawn position for a zombie.
+    Vector3 GenerateSpawnPosition()
+    {
+        float yPos = .5f;
+        float xPos = Random.Range(spawnMinX, spawnMaxX);
+        float zPos = Random.Range(spawnZMin, spawnZMax);
+        return new Vector3(xPos, yPos, zPos);
+    }
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
         BossRB = GetComponent<Rigidbody>();
-        InvokeRepeating("Ability", 1, 12);
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        bossdps = false;
     }
 
     // Update is called once per frame
@@ -36,6 +86,28 @@ public class BossScript2 : MonoBehaviour
             this.transform.LookAt(player.transform);
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             playerhP = player.GetComponent<PlayerController>().hP;
+            spawnManager = GameObject.Find("SpawnManager");
+            bossalv = spawnManager.GetComponent<SpawnManager>().bossCounter;
+            minionsalv = spawnManager.GetComponent<SpawnManager>().enemyCount;
+            if (bossalv == 1)
+            {
+                elapsedtime += Time.deltaTime;
+                if (elapsedtime > spawnTimer)
+                {
+                    elapsedtime = 0;
+                    Debug.Log("working");
+                    int minionamount = Random.Range(2,3);
+                    int i = 0;
+                    speed = 0;
+                    while (i <= minionamount)
+                    {
+                        Instantiate(enemyPrefab, GenerateRadialSpawnPosition(), enemyPrefab.transform.rotation);
+                        i += 1;
+                    }
+                    StartCoroutine(Buildup());
+                }
+
+            }
         }
 
     }
@@ -53,23 +125,4 @@ public class BossScript2 : MonoBehaviour
             }
         }
     }
-    void Ability()
-    {
-        speed = 0;
-        chargeParticle.Play();
-        StartCoroutine(BuildUp());
-        StartCoroutine(AbilityTimer());
-    }
-    IEnumerator BuildUp()
-    {
-        yield return new WaitForSeconds(2);
-        bossdps = true;
-        speed = 2.5f;
-        BossRB.AddForce(transform.forward * 60, ForceMode.Impulse);
-    }
-    IEnumerator AbilityTimer()
-    {
-        yield return new WaitForSeconds(4);
-        bossdps = false;
-    }
-}  
+}

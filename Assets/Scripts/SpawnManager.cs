@@ -15,8 +15,8 @@ public class SpawnManager : MonoBehaviour
     public int waveCount = 1;
     public int bossCount;
     public int bossCounter;
-    public float totalEnimies;
-    public float enemyCount;
+    public int totalEnimies;
+    public int enemyCount;
 
 
     // Start is called before the first frame update
