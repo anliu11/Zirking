@@ -14,6 +14,7 @@ public class BossScript2 : MonoBehaviour
     public int hitPoints;
     private int playerhP;
     public float spawnTimer = 5;
+    public float pauseboss;
     public float elapsedtime;
     public int bossalv;
     public int minionsalv;
@@ -28,12 +29,6 @@ public class BossScript2 : MonoBehaviour
     private float spawnZMax = 25; // set max spawn Z
     private float spawnRadius = 5;
 
-    IEnumerator BuildUp()
-    {
-        speed = 0;
-        yield return new WaitForSeconds(2);
-        speed = 3;
-    }
     // Returns true if the point is in the bounding box defined by the x and z min/max
     bool CheckBoundingBox(Vector3 point, float minX, float maxX, float minZ, float maxZ)
     {
@@ -99,14 +94,13 @@ public class BossScript2 : MonoBehaviour
                     int minionamount = Random.Range(2,3);
                     int i = 0;
                     speed = 0;
+                    pauseboss += Time.deltaTime;
                     while (i <= minionamount)
                     {
                         Instantiate(enemyPrefab, GenerateRadialSpawnPosition(), enemyPrefab.transform.rotation);
                         i += 1;
                     }
-                    StartCoroutine(Buildup());
                 }
-
             }
         }
 
