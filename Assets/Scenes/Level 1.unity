@@ -16350,6 +16350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorTexture: {fileID: 2800000, guid: 8c89ed5746a4faa48bb97701cc2f2e35, type: 3}
+  pointerCursor: {fileID: 2800000, guid: cace5f6bac8304c3da7f77a392748cf2, type: 3}
 --- !u!4 &1684029457
 Transform:
   m_ObjectHideFlags: 0
@@ -16363,7 +16364,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1692549397 stripped
 Transform:

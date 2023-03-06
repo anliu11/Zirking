@@ -38,6 +38,9 @@ public class GameManager : MonoBehaviour
     {
         gameManagerAudio = GetComponent<AudioSource>();
         cursorManeger = GameObject.Find("Cursor Maneger");
+
+        cursorManeger.GetComponent<CursorManeger>().PointerCursor();
+
     }
 
     // Update is called once per frame
@@ -85,6 +88,9 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         winScreen.gameObject.SetActive(true);
         Debug.Log("Player has won");
+
+        cursorManeger.GetComponent<CursorManeger>().PointerCursor();
+
     }
 
     //Game over code.
@@ -95,6 +101,8 @@ public class GameManager : MonoBehaviour
         returnButtonLose.gameObject.SetActive(true);
         isGameActive = false;
         Debug.Log("Player Died");
+        cursorManeger.GetComponent<CursorManeger>().PointerCursor();
+
     }
 
     // Runs when the restart button is pressed.

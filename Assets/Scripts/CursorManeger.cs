@@ -12,7 +12,7 @@ public class CursorManeger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        PointerCursor();
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class CursorManeger : MonoBehaviour
 
     public void PointerCursor()
     {
-        cursorHotSpot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
+        cursorHotSpot = new Vector2(0, 0);
         Cursor.SetCursor(pointerCursor, cursorHotSpot, CursorMode.Auto);
 
 
