@@ -48,9 +48,9 @@ public class GameManager : MonoBehaviour
     {
         //Updates the wave number by getting it from other script.
         wave = spawnManager.GetComponent<SpawnManager>().waveCount - 1;
-        waveNumber.text = "Wave: " + wave.ToString() + "/10"; 
+        waveNumber.text = "WAVE- " + wave.ToString() + " OF 10"; 
         enemyNum = spawnManager.GetComponent<SpawnManager>().enemyCount + spawnManager.GetComponent<SpawnManager>().bossCounter;
-        enemyCount.text = "Enemy Count: " + enemyNum.ToString();
+        enemyCount.text = "ENEMY COUNT- " + enemyNum.ToString();
 
 
 
@@ -118,10 +118,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("isGameActive is true");
         spawnManager = GameObject.Find("SpawnManager");
         wave = spawnManager.GetComponent<SpawnManager>().waveCount - 1;
-        waveNumber.text = "Wave: " + wave.ToString() + "/10";
+        waveNumber.text = "WAVE -" + wave.ToString() + " OF 10";
 
         enemyNum = spawnManager.GetComponent<SpawnManager>().enemyCount + spawnManager.GetComponent<SpawnManager>().bossCounter;
-        enemyCount.text = "Enemy Count: " + enemyNum.ToString(); 
+        enemyCount.text = "ENEMY COUNT-" + enemyNum.ToString(); 
 
 
         player = GameObject.Find("Player");
