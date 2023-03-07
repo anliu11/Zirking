@@ -13,15 +13,16 @@ public class BossScript2 : MonoBehaviour
     public GameObject enemyPrefab;
     public int hitPoints;
     private int playerhP;
-    public float spawnTimer = 5;
+    public float spawnTimer = 8;
     public float pauseboss;
+    public float bossabilitywait;
     public float elapsedtime;
     public int bossalv;
     public int minionsalv;
     public GameManager gameManager;
     public GameObject spawnManager;
     public ParticleSystem damageParticle;
-    public ParticleSystem chargeParticle;
+
 
     private float spawnMinX = -15;
     private float spawnMaxX = 17;
@@ -89,16 +90,29 @@ public class BossScript2 : MonoBehaviour
                 elapsedtime += Time.deltaTime;
                 if (elapsedtime > spawnTimer)
                 {
-                    elapsedtime = 0;
-                    Debug.Log("working");
-                    int minionamount = Random.Range(2,3);
-                    int i = 0;
+                    elapsedtime = -4;
                     speed = 0;
+                    Debug.Log("working");
+                }
+                if (speed == 0f)
+                {
+                    bossabilitywait += Time.deltaTime;
                     pauseboss += Time.deltaTime;
-                    while (i <= minionamount)
+                    if (bossabilitywait > 3)
                     {
-                        Instantiate(enemyPrefab, GenerateRadialSpawnPosition(), enemyPrefab.transform.rotation);
-                        i += 1;
+                        bossabilitywait = -1;
+                        int minionamount = Random.Range(2,3);
+                        int i = 0;
+                        while (i <= minionamount)
+                        {
+                            Instantiate(enemyPrefab, GenerateRadialSpawnPosition(), enemyPrefab.transform.rotation);
+                            i += 1;
+                        }
+                    }
+                    if (pauseboss > 4)
+                    {
+                        pauseboss = 0;
+                        speed = 5;
                     }
                 }
             }

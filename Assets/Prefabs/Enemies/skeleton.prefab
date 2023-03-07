@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea244275238b3425ca90b435a9cef9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 0
   player: {fileID: 0}
   hitPoints: 75
   gameManager: {fileID: 0}

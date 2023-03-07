@@ -4519,6 +4519,22 @@ PrefabInstance:
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8060108118714070923, guid: 9d369daaf3a0d4a26a8b83b92bd7874f, type: 3}
+      propertyPath: pauseboss
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060108118714070923, guid: 9d369daaf3a0d4a26a8b83b92bd7874f, type: 3}
+      propertyPath: spawnTimer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060108118714070923, guid: 9d369daaf3a0d4a26a8b83b92bd7874f, type: 3}
+      propertyPath: chargeParticle
+      value: 
+      objectReference: {fileID: 6329911154530577383, guid: 45c392dc7684244d0992000537bf7905, type: 3}
+    - target: {fileID: 8060108118714070923, guid: 9d369daaf3a0d4a26a8b83b92bd7874f, type: 3}
+      propertyPath: damageParticle
+      value: 
+      objectReference: {fileID: 6329911154530577383, guid: 45c392dc7684244d0992000537bf7905, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d369daaf3a0d4a26a8b83b92bd7874f, type: 3}
 --- !u!1001 &498983957

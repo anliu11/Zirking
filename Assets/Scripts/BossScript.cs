@@ -22,7 +22,7 @@ public class BossScript : MonoBehaviour
     {
         player = GameObject.Find("Player");
         BossRB = GetComponent<Rigidbody>();
-        InvokeRepeating("Ability", 1, 12);
+        InvokeRepeating("Ability", 4, 6);
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         bossdps = false;
     }
