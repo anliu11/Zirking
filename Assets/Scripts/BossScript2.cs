@@ -19,6 +19,7 @@ public class BossScript2 : MonoBehaviour
     public float elapsedtime;
     public int bossalv;
     public int minionsalv;
+    public float minionspeed;
     public GameManager gameManager;
     public GameObject spawnManager;
     public ParticleSystem damageParticle;
@@ -60,7 +61,7 @@ public class BossScript2 : MonoBehaviour
     //Creates a spawn position for a zombie.
     Vector3 GenerateSpawnPosition()
     {
-        float yPos = .5f;
+        float yPos = .5f;   
         float xPos = Random.Range(spawnMinX, spawnMaxX);
         float zPos = Random.Range(spawnZMin, spawnZMax);
         return new Vector3(xPos, yPos, zPos);
@@ -71,6 +72,9 @@ public class BossScript2 : MonoBehaviour
         player = GameObject.Find("Player");
         BossRB = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        /* //Getting the minion speed.
+        minionspeed = gameObject.GetComponent<Enemy2>().speed;
+        */
     }
 
     // Update is called once per frame
@@ -98,6 +102,9 @@ public class BossScript2 : MonoBehaviour
                 {
                     bossabilitywait += Time.deltaTime;
                     pauseboss += Time.deltaTime;
+                    /* //making it so that the minion dont move when spawned.
+                    minionspeed = 0;
+                    */
                     if (bossabilitywait > 3)
                     {
                         bossabilitywait = -1;
@@ -113,6 +120,9 @@ public class BossScript2 : MonoBehaviour
                     {
                         pauseboss = 0;
                         speed = 5;
+                        /* //trying to make it so that they change speed at same time.
+                        minionspeed = 5;
+                        */
                     }
                 }
             }
