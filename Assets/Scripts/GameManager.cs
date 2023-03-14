@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public Button restartButtonLose;
     public Button returnButtonMain;
     public Button returnButtonLose;
+    public Button returnButtonWin;
     public GameObject titleScreen;
     public GameObject playerHud;
     public GameObject healthBar;
@@ -87,6 +88,7 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = false;
         winScreen.gameObject.SetActive(true);
+        returnButtonWin.gameObject.SetActive(true);
         Debug.Log("Player has won");
 
         cursorManeger.GetComponent<CursorManeger>().PointerCursor();
