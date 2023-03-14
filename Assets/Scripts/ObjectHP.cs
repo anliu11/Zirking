@@ -7,6 +7,7 @@ public class ObjectHP : MonoBehaviour
     public int objectHP;
     private int wave;
     public int damageMultipler;
+    public float destroyWaitTime;
 
     private bool active = true;
 
@@ -27,9 +28,7 @@ public class ObjectHP : MonoBehaviour
     {
         if (gameManager.GetComponent<GameManager>().wave == 10)
         {
-            Instantiate(destroySoundPrefab, transform.position, Quaternion.identity);
             Instantiate(destroyParticlePrefab, transform.position, Quaternion.identity);
-
             Destroy(parentObject);
         }
   
@@ -69,7 +68,7 @@ public class ObjectHP : MonoBehaviour
     }
     IEnumerator hitCooldown()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         active = true;
     }
 }

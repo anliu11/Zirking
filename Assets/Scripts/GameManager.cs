@@ -29,12 +29,18 @@ public class GameManager : MonoBehaviour
     public AudioClip deathSound;
     public AudioClip bossDeathSound;
     private bool deathInstance = false;
+    private GameObject cursorManeger;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         gameManagerAudio = GetComponent<AudioSource>();
+        cursorManeger = GameObject.Find("Cursor Maneger");
+
+        cursorManeger.GetComponent<CursorManeger>().PointerCursor();
+
     }
 
     // Update is called once per frame
@@ -42,9 +48,9 @@ public class GameManager : MonoBehaviour
     {
         //Updates the wave number by getting it from other script.
         wave = spawnManager.GetComponent<SpawnManager>().waveCount - 1;
-        waveNumber.text = "Wave: " + wave.ToString() + "/10"; 
+        waveNumber.text = "WAVE- " + wave.ToString() + " OF 10"; 
         enemyNum = spawnManager.GetComponent<SpawnManager>().enemyCount + spawnManager.GetComponent<SpawnManager>().bossCounter;
-        enemyCount.text = "Enemy Count: " + enemyNum.ToString();
+        enemyCount.text = "ENEMY COUNT- " + enemyNum.ToString();
 
 
 
@@ -82,6 +88,9 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         winScreen.gameObject.SetActive(true);
         Debug.Log("Player has won");
+
+        cursorManeger.GetComponent<CursorManeger>().PointerCursor();
+
     }
 
     //Game over code.
@@ -92,6 +101,8 @@ public class GameManager : MonoBehaviour
         returnButtonLose.gameObject.SetActive(true);
         isGameActive = false;
         Debug.Log("Player Died");
+        cursorManeger.GetComponent<CursorManeger>().PointerCursor();
+
     }
 
     // Runs when the restart button is pressed.
@@ -107,10 +118,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("isGameActive is true");
         spawnManager = GameObject.Find("SpawnManager");
         wave = spawnManager.GetComponent<SpawnManager>().waveCount - 1;
-        waveNumber.text = "Wave: " + wave.ToString() + "/10";
+        waveNumber.text = "WAVE -" + wave.ToString() + " OF 10";
 
         enemyNum = spawnManager.GetComponent<SpawnManager>().enemyCount + spawnManager.GetComponent<SpawnManager>().bossCounter;
-        enemyCount.text = "Enemy Count: " + enemyNum.ToString(); 
+        enemyCount.text = "ENEMY COUNT-" + enemyNum.ToString(); 
 
 
         player = GameObject.Find("Player");
@@ -118,6 +129,8 @@ public class GameManager : MonoBehaviour
         returnButtonMain.gameObject.SetActive(false);
         playerHud.gameObject.SetActive(true);
         healthBar.SetActive(true);
+
+        cursorManeger.GetComponent<CursorManeger>().CrossHairCursor();
     }
 
     public void PlayDeathSound()

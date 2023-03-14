@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4265353656356279642}
   - component: {fileID: 4265353656356279641}
+  - component: {fileID: 443060570712783164}
   m_Layer: 0
   m_Name: Destroy Object Sound
   m_TagString: Untagged
@@ -44,7 +45,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 766c25f4d4ed54ff5ae9e2b48cbf2eda, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -128,3 +129,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &443060570712783164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4265353656356279640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df059f6cd0a7c4a07a7aea9eaf4b633a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
