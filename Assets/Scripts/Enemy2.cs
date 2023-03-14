@@ -74,7 +74,7 @@ public class Enemy2 : MonoBehaviour
     IEnumerator staggeredUnit()
     {
         yield return new WaitForSeconds(0.1f);
-        speed = 3;
+        speed = 5;
     }
 
     public void StartGame()
