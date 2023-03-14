@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 645414361379805959}
   - component: {fileID: 614647930}
   - component: {fileID: 2732142205842330890}
-  - component: {fileID: -911799122610268242}
   m_Layer: 0
   m_Name: PowerUp lvl 2
   m_TagString: MedKit
@@ -100,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f17ea9128de4e869d46439ce7311d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 0
+  rotationSpeed: 30
 --- !u!65 &614647930
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -130,16 +129,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-911799122610268242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3105189679447694443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3c09a9fadab49e2bbd8ac8cf1dffe9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 60
