@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator waitUntilDestroy()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         Destroy(gameObject);
     }
     public void StartGame()
