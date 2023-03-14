@@ -28,7 +28,8 @@ public class ObjectHP : MonoBehaviour
     {
         if (gameManager.GetComponent<GameManager>().wave == 10)
         {
-            StartCoroutine(destroyStagger());
+            Instantiate(destroyParticlePrefab, transform.position, Quaternion.identity);
+            Destroy(parentObject);
         }
   
     }
@@ -67,14 +68,7 @@ public class ObjectHP : MonoBehaviour
     }
     IEnumerator hitCooldown()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         active = true;
-    }
-    IEnumerator destroyStagger()
-    {
-        yield return new WaitForSeconds(destroyWaitTime);
-        Instantiate(destroySoundPrefab, transform.position, Quaternion.identity);
-        Instantiate(destroyParticlePrefab, transform.position, Quaternion.identity);
-        Destroy(parentObject);
     }
 }
