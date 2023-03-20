@@ -854,6 +854,7 @@ MonoBehaviour:
   restartButtonLose: {fileID: 243494665}
   returnButtonMain: {fileID: 203809776}
   returnButtonLose: {fileID: 1571133147}
+  returnButtonWin: {fileID: 1607188883}
   titleScreen: {fileID: 1624835989}
   playerHud: {fileID: 2040293448}
   healthBar: {fileID: 800840290}
