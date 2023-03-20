@@ -12,6 +12,9 @@ public class Enemy2 : MonoBehaviour
     public int hitPoints;
     public GameManager gameManager;
     public ParticleSystem damageParticle;
+    public int bossalv;
+    public float elapsedtime = 0.0f;
+    public GameObject spawnManager;
 
     // Start is called before the first frame update
     void Start()
@@ -19,17 +22,34 @@ public class Enemy2 : MonoBehaviour
         player = GameObject.Find("Player");
         enemyRB = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        spawnManager = GameObject.Find("SpawnManager");
        
     }
 
     // Update is called once per frame
     void Update()
     {
+        bossalv = spawnManager.GetComponent<SpawnManager>().bossCounter;
         //looks at the player
         if (gameManager.GetComponent<GameManager>().isGameActive == true)
         {
-            this.transform.LookAt(player.transform);
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            if (bossalv == 1)
+            {
+                this.transform.LookAt(player.transform);
+                speed = 0;
+                elapsedtime += Time.deltaTime;
+                if (elapsedtime > 1)
+                {
+                    speed = 5;
+                    transform.Translate(Vector3.forward * Time.deltaTime * speed);
+                }
+            }
+            else
+            {
+                this.transform.LookAt(player.transform);
+                transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            }
+
         }
 
     }
@@ -54,7 +74,7 @@ public class Enemy2 : MonoBehaviour
     IEnumerator staggeredUnit()
     {
         yield return new WaitForSeconds(0.1f);
-        speed = 3;
+        speed = 5;
     }
 
     public void StartGame()
