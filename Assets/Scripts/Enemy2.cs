@@ -54,6 +54,14 @@ public class Enemy2 : MonoBehaviour
 
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject && hitPoints <= 0)
+        {
+            gameObject.transform.position = new Vector3(100, 0, 100);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         int damage = Random.Range(10,15);
@@ -64,7 +72,7 @@ public class Enemy2 : MonoBehaviour
             damageParticle.Play();
             if (hitPoints <= 0)
             {
-                Destroy(gameObject);
+                StartCoroutine(waitUntilDestroy());
             }
             speed = 0;
             StartCoroutine(staggeredUnit());
@@ -76,7 +84,11 @@ public class Enemy2 : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         speed = 5;
     }
-
+    IEnumerator waitUntilDestroy()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Destroy(gameObject);
+    }
     public void StartGame()
     {
 
