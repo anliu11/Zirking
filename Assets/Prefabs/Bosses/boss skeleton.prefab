@@ -150,8 +150,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.056141, y: 3.4882214, z: 1.9409838}
-  m_Center: {x: -0.02072078, y: 1.2441105, z: 0.4704919}
+  m_Size: {x: 2.056141, y: 2.977266, z: 1.9409838}
+  m_Center: {x: -0.02072072, y: 1.4995881, z: 0.4704919}
 --- !u!114 &8060108118714070923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,18 +164,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160e98b1a39d146098ec3121e8bd2f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5
   player: {fileID: 0}
   enemyPrefab: {fileID: 348177503913612169, guid: b14abe6d20b1f4995b86d4c39ea7f968, type: 3}
   hitPoints: 200
-  spawnTimer: 2
+  spawnTimer: 8
+  pauseboss: 0
+  bossabilitywait: 0
   elapsedtime: 0
   bossalv: 0
   minionsalv: 0
+  minionspeed: 0
   gameManager: {fileID: 0}
   spawnManager: {fileID: 0}
-  damageParticle: {fileID: 0}
-  chargeParticle: {fileID: 0}
+  damageParticle: {fileID: 6329911154530577383, guid: 45c392dc7684244d0992000537bf7905, type: 3}
 --- !u!1 &5546603867992332464
 GameObject:
   m_ObjectHideFlags: 0
