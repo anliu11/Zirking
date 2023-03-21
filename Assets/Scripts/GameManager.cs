@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public AudioClip bossDeathSound;
     private bool deathInstance = false;
     private GameObject cursorManeger;
+    public bool vampireability = false;
 
 
 

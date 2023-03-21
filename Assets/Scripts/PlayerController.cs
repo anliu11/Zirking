@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip gunShootSound;
     public AudioClip healthKitSound;
     public AudioClip bonk;
+    public bool abilityboss3;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
         healthBar.SetMaxHealth(maxHP);
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         BossObject = GameObject.Find("Boss Zombie");
+        abilityboss3 = gameManager.GetComponent<GameManager>().vampireability;
    
     }
 
@@ -48,7 +50,14 @@ public class PlayerController : MonoBehaviour
         {
             moveSpeed = 0;
         }
-
+        if (abilityboss3 == true)
+        {
+            moveSpeed = 0;
+        }
+        else
+        {
+            moveSpeed = 5;
+        }
         if (gameManager.GetComponent<GameManager>().isGameActive == true)
         {
             // Makes the player look towards the camera
