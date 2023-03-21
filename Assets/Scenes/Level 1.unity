@@ -4392,7 +4392,7 @@ MonoBehaviour:
   bossPrefab: {fileID: 4242452295651010834, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
   medpackPrefab: {fileID: 3234095999662694036, guid: 11573369437d746b18de5af3ea17f7ec, type: 3}
   delay: 0
-  waveCount: 9
+  waveCount: 1
   bossCount: 1
   bossCounter: 0
   totalEnimies: 0
@@ -16479,7 +16479,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: eae8add22c492477991c0dca8a79c8e9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.65
   m_Pitch: 1
   Loop: 1
   Mute: 0
