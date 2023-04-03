@@ -9,9 +9,6 @@ public class BossScript3 : MonoBehaviour
     private int playerhP;
     private Rigidbody BossRB;
 
-    public bool abilityon = false;
-    public float abilitytimer;
-    public float abilityusagetime;
     public float speed;
     public int hitPoints;
     public GameObject player;
