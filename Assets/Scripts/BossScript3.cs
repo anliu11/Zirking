@@ -24,7 +24,6 @@ public class BossScript3 : MonoBehaviour
         player = GameObject.Find("Player");
         BossRB = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        abilityon = gameManager.GetComponent<GameManager>().vampireability;
     }
 
     // Update is called once per frame
@@ -36,18 +35,6 @@ public class BossScript3 : MonoBehaviour
             this.transform.LookAt(player.transform);
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             playerhP = player.GetComponent<PlayerController>().hP;
-            abilitytimer += Time.deltaTime;
-            if (abilitytimer > 5)
-            {
-                abilityusagetime += Time.deltaTime;
-                abilityon = true;
-                if (abilityusagetime > 3)
-                {
-                    abilityusagetime = 0;
-                    abilitytimer = 0;
-                    abilityon = false;
-                }
-            }
         }
 
     }
