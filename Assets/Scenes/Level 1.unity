@@ -863,6 +863,7 @@ MonoBehaviour:
   winWaveNum: 10
   deathSound: {fileID: 8300000, guid: c1b37498e5dee49689d8ac88b6b53465, type: 3}
   bossDeathSound: {fileID: 8300000, guid: d2de7ad830dce4b0292dee01765602ed, type: 3}
+  vampireability: 0
 --- !u!4 &97922864
 Transform:
   m_ObjectHideFlags: 0
@@ -4153,6 +4154,7 @@ MonoBehaviour:
   gunShootSound: {fileID: 8300000, guid: 0cfe12a73e38146e8829594161e60333, type: 3}
   healthKitSound: {fileID: 8300000, guid: bea2e75ce572a4fadb8f9eaf1e70fd00, type: 3}
   bonk: {fileID: 0}
+  abilityboss3: 0
 --- !u!54 &424464497
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7652,11 +7654,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c87047d653746e6813ccd25e4edf48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  hitPoints: 0
+  speed: 2
+  hitPoints: 40
   player: {fileID: 0}
   gameManager: {fileID: 0}
-  damageParticle: {fileID: 0}
+  damageParticle: {fileID: 6329911154530577383, guid: 45c392dc7684244d0992000537bf7905, type: 3}
+--- !u!54 &770405893
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770405889}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &780845487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14368,7 +14386,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14505,6 +14523,7 @@ MonoBehaviour:
   gunShootSound: {fileID: 8300000, guid: 0cfe12a73e38146e8829594161e60333, type: 3}
   healthKitSound: {fileID: 8300000, guid: bea2e75ce572a4fadb8f9eaf1e70fd00, type: 3}
   bonk: {fileID: 8300000, guid: 1e59ff81fb6d149db910cbc2ebc2716b, type: 3}
+  abilityboss3: 0
 --- !u!82 &1542752524
 AudioSource:
   m_ObjectHideFlags: 0
