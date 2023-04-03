@@ -23,6 +23,7 @@ public class BossScript2 : MonoBehaviour
     public GameManager gameManager;
     public GameObject spawnManager;
     public ParticleSystem damageParticle;
+    public ParticleSystem abilityParticle;
 
 
     private float spawnMinX = -15;
@@ -96,6 +97,7 @@ public class BossScript2 : MonoBehaviour
                 {
                     elapsedtime = -4;
                     speed = 0;
+                    abilityParticle.Play();
                     Debug.Log("working");
                 }
                 if (speed == 0f)
