@@ -9,6 +9,7 @@ public class BossScript3 : MonoBehaviour
     private int playerhP;
     private Rigidbody BossRB;
 
+    public float abilitytimer;
     public float speed;
     public int hitPoints;
     public GameObject player;
@@ -32,6 +33,12 @@ public class BossScript3 : MonoBehaviour
             this.transform.LookAt(player.transform);
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             playerhP = player.GetComponent<PlayerController>().hP;
+            abilitytimer += Time.deltaTime;
+            if (abilitytimer > 8.0f)
+            {
+                abilitytimer = -2;
+                
+            }
         }
 
     }
