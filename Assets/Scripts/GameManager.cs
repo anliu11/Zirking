@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
         returnButtonWin.gameObject.SetActive(true);
         Debug.Log("Player has won");
 
+        player.SetActive(false);
         cursorManeger.GetComponent<CursorManeger>().PointerCursor();
 
     }
