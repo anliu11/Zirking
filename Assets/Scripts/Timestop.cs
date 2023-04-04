@@ -6,6 +6,9 @@ using UnityEngine;
 public class Timestop : MonoBehaviour
 {
     public GameManager gameManager;
+    public Vector3 scaleChange;
+    private Rigidbody BossRB;
+
     
     // Start is called before the first frame update
     void Start()
@@ -18,7 +21,7 @@ public class Timestop : MonoBehaviour
     {
         if (gameManager.GetComponent<GameManager>().isGameActive == true)
         {
-            
+            transform.localScale += (scaleChange * Time.deltaTime);
         }
     }
 }

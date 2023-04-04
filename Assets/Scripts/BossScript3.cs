@@ -8,11 +8,13 @@ public class BossScript3 : MonoBehaviour
 {
     private int playerhP;
     private Rigidbody BossRB;
+    
 
     public float abilitytimer;
     public float speed;
     public int hitPoints;
     public GameObject player;
+    public GameObject aura;
     public GameManager gameManager;
     public ParticleSystem damageParticle;
 
@@ -36,11 +38,19 @@ public class BossScript3 : MonoBehaviour
             abilitytimer += Time.deltaTime;
             if (abilitytimer > 8.0f)
             {
+                speed = 0;
                 abilitytimer = -2;
-                
+                Instantiate(aura, generatesspawnpos(), aura.transform.rotation);
             }
         }
 
+    }
+    Vector3 generatesspawnpos()
+    {
+        float yPos = .5f;
+        float xPos = transform.position.x;
+        float zPos = transform.position.z;
+        return new Vector3(xPos,yPos,zPos);
     }
     private void OnTriggerEnter(Collider other)
     {

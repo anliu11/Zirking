@@ -11,6 +11,8 @@ TagManager:
   - Boss
   - MedKit
   - Object
+  - Powerup
+  - aura
   layers:
   - Default
   - TransparentFX

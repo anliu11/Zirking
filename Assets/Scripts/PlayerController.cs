@@ -177,6 +177,10 @@ public class PlayerController : MonoBehaviour
                     gameObject.SetActive(false);
                 }
             }
+            if (collision.gameObject.CompareTag("aura"))
+            {
+                moveSpeed = 0;
+            }
             if (BossDps == false)
             {
                 int damage = Random.Range(20,25);
