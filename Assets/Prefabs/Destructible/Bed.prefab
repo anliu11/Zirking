@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8866346046698013055}
   - component: {fileID: 8866346046698783071}
   - component: {fileID: 8866346046699783071}
+  - component: {fileID: 822232855}
+  - component: {fileID: 5813579235809183504}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -25,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8866346046697528671}
-  m_LocalRotation: {x: 0.000000019316664, y: -0.46781358, z: 0.000000010224395, w: 0.8838272}
+  m_LocalRotation: {x: 0, y: -0.46781406, z: 0, w: 0.8838269}
   m_LocalPosition: {x: 3.17, y: 0.01456815, z: 14.31}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 0.7499995, y: 0.75, z: 0.7499995}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,3 +85,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &822232855
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8866346046697528671}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3045819, y: 1.0360656, z: 1.3059586}
+  m_Center: {x: 0.0049028443, y: 0.5034646, z: -0.04876843}
+--- !u!114 &5813579235809183504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8866346046697528671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e35aed33eb44f39b50950c0353e879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectHP: 200
+  damageMultipler: 0
+  destroyWaitTime: 0
+  parentObject: {fileID: 8866346046697528671}
+  destroySoundPrefab: {fileID: 4265353656356279640, guid: 4ef1061c2d2704c968de3c18f3a4c56c, type: 3}
+  destroyParticlePrefab: {fileID: 1494083766182838, guid: 151b49b11ab5924429acc76ead6435fa, type: 3}
+  gameManager: {fileID: 0}

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1584223295149397275}
   - component: {fileID: 1551038189636770959}
   - component: {fileID: 1558623684078093615}
+  - component: {fileID: 33034073361704979}
+  - component: {fileID: 6473819687200865008}
   m_Layer: 0
   m_Name: Bonfire (1)
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1582742965679998003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.82, y: 0.03134919, z: 8.15}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 1.2499992, y: 1.25, z: 1.2499992}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1576858658591485079}
@@ -84,6 +86,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &33034073361704979
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582742965679998003}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8508459, y: 0.35301873, z: 0.87110955}
+  m_Center: {x: 0.0087101525, y: 0.14516018, z: -0.00993938}
+--- !u!114 &6473819687200865008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582742965679998003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e35aed33eb44f39b50950c0353e879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectHP: 150
+  damageMultipler: 0
+  destroyWaitTime: 0
+  parentObject: {fileID: 1582742965679998003}
+  destroySoundPrefab: {fileID: 4265353656356279640, guid: 4ef1061c2d2704c968de3c18f3a4c56c, type: 3}
+  destroyParticlePrefab: {fileID: 1685874166552172, guid: 2dc5347a44240ea4597cafb2d1d7c160, type: 3}
+  gameManager: {fileID: 0}
 --- !u!1 &1582919204568912017
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4716382050241484348}
   - component: {fileID: 4716382050240189980}
   - component: {fileID: 4716382050239190236}
+  - component: {fileID: 1710872865}
+  - component: {fileID: 4716382048643679808}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4716382050241448476}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 13.4, y: 0.25, z: 2.34}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,3 +85,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1710872865
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4716382050241448476}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4321638, y: 0.7808765, z: 3.8677459}
+  m_Center: {x: 0.00015878805, y: 0.22220391, z: -0.10846292}
+--- !u!114 &4716382048643679808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4716382050241448476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e35aed33eb44f39b50950c0353e879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectHP: 500
+  damageMultipler: 0
+  destroyWaitTime: 0
+  parentObject: {fileID: 4716382050241448476}
+  destroySoundPrefab: {fileID: 4265353656356279640, guid: 4ef1061c2d2704c968de3c18f3a4c56c, type: 3}
+  destroyParticlePrefab: {fileID: 1368782967120030, guid: bdbdcfd7c511df246af535551f842df5, type: 3}
+  gameManager: {fileID: 0}
