@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2725250958374040613}
   - component: {fileID: 2725250958375007973}
   - component: {fileID: 2654896601373942604}
+  - component: {fileID: 5440707293751563505}
+  - component: {fileID: 125401975673310105}
   m_Layer: 0
   m_Name: Mushroom Yellow
   m_TagString: Untagged
@@ -26,9 +28,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2725250958373070885}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.72, y: 0.000000004309991, z: -1.31}
-  m_LocalScale: {x: 9, y: 9, z: 9}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,3 +100,35 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6c890c97a154a474082af84a379dffce, type: 3}
+--- !u!65 &5440707293751563505
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2725250958373070885}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15732345, y: 0.22989728, z: 0.16672897}
+  m_Center: {x: 0.0020084283, y: 0.11494864, z: 0.0048200856}
+--- !u!114 &125401975673310105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2725250958373070885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e35aed33eb44f39b50950c0353e879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectHP: 125
+  damageMultipler: 0
+  destroyWaitTime: 0
+  parentObject: {fileID: 2725250958373070885}
+  destroySoundPrefab: {fileID: 4265353656356279640, guid: 4ef1061c2d2704c968de3c18f3a4c56c, type: 3}
+  destroyParticlePrefab: {fileID: 1685874166552172, guid: 2dc5347a44240ea4597cafb2d1d7c160, type: 3}
+  gameManager: {fileID: 0}

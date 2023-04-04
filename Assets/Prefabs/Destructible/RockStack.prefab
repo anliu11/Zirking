@@ -23,9 +23,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8327585894680302271}
-  m_LocalRotation: {x: -0, y: -0.18425861, z: -0, w: 0.98287785}
+  m_LocalRotation: {x: 0, y: -0.18426009, z: 0, w: 0.98287755}
   m_LocalPosition: {x: 10.201706, y: 1.02, z: 6.394495}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.49999982, y: 0.5, z: 0.49999982}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7472288011920028083}
@@ -266,7 +266,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7405846476849542632, guid: c6308cb7062fac34e8e50600086b12a1, type: 3}
       propertyPath: m_Name
-      value: Rock_01 (1)
+      value: Rock Hit Detector
       objectReference: {fileID: 0}
     - target: {fileID: 7405846476849834440, guid: c6308cb7062fac34e8e50600086b12a1, type: 3}
       propertyPath: m_RootOrder
@@ -331,3 +331,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7405846476849834440, guid: c6308cb7062fac34e8e50600086b12a1, type: 3}
   m_PrefabInstance: {fileID: 8514375362539369262}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1220468240418784966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7405846476849542632, guid: c6308cb7062fac34e8e50600086b12a1, type: 3}
+  m_PrefabInstance: {fileID: 8514375362539369262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &582773734505696251
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220468240418784966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4055667, y: 1.2160358, z: 2.0260372}
+  m_Center: {x: 0.09877691, y: -0.31187445, z: 0.018051103}
+--- !u!114 &8970210003571616513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220468240418784966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e35aed33eb44f39b50950c0353e879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectHP: 300
+  damageMultipler: 0
+  destroyWaitTime: 0
+  parentObject: {fileID: 8327585894680302271}
+  destroySoundPrefab: {fileID: 4265353656356279640, guid: 4ef1061c2d2704c968de3c18f3a4c56c, type: 3}
+  destroyParticlePrefab: {fileID: 1494083766182838, guid: 151b49b11ab5924429acc76ead6435fa, type: 3}
+  gameManager: {fileID: 0}
