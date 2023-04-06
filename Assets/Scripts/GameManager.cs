@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public AudioClip bossDeathSound;
     private bool deathInstance = false;
     private GameObject cursorManeger;
+    public bool waveDestroy = true;
+    public GameObject waveDestroySound;
 
 
 
@@ -76,6 +78,14 @@ public class GameManager : MonoBehaviour
         {
             Win();
         }
+        if (wave == 10 && waveDestroy == true)
+        {
+            waveDestroy = false;
+            Instantiate(waveDestroySound, transform.position, Quaternion.identity);
+
+
+        }
+      
     }
 
     public void UpdateWave(int waveToAdd)
