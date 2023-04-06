@@ -14554,8 +14554,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  speedBuff: 3
-  speedBuffTime: 2.5
+  speedBuff: 9
+  speedBuffTime: 0.37
   waitTime: 1
   playerObj: {fileID: 1542752521}
   bulletSpawn: {fileID: 34089740}
