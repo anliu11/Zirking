@@ -170,7 +170,7 @@ MonoBehaviour:
   speed: 5
   player: {fileID: 0}
   enemyPrefab: {fileID: 348177503913612169, guid: b14abe6d20b1f4995b86d4c39ea7f968, type: 3}
-  hitPoints: 200
+  hitPoints: 2000
   spawnTimer: 8
   pauseboss: 0
   bossabilitywait: 0

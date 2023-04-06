@@ -82,8 +82,6 @@ public class GameManager : MonoBehaviour
         {
             waveDestroy = false;
             Instantiate(waveDestroySound, transform.position, Quaternion.identity);
-
-
         }
       
     }
