@@ -4139,6 +4139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  speedBuff: 0
+  speedBuffTime: 0
   waitTime: 1
   playerObj: {fileID: 424464495}
   bulletSpawn: {fileID: 1292415154}
@@ -14550,6 +14552,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  speedBuff: 3
+  speedBuffTime: 2.5
   waitTime: 1
   playerObj: {fileID: 1542752521}
   bulletSpawn: {fileID: 34089740}

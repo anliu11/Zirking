@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     // Movement Variables
     public float moveSpeed;
+    public float speedBuff;
+    public float speedBuffTime;
+    private float moveSpeedPrevious;
     private Vector3 moveInput;
     private Vector3 moveVelocity;
 
@@ -38,6 +41,8 @@ public class PlayerController : MonoBehaviour
         healthBar.SetMaxHealth(maxHP);
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         BossObject = GameObject.Find("Boss Zombie");
+
+        moveSpeedPrevious = moveSpeed;
    
     }
 
@@ -129,6 +134,9 @@ public class PlayerController : MonoBehaviour
             playerAudio.PlayOneShot(healthKitSound, 0.5f);
             healthBar.SetHealth(hP);
 
+            moveSpeed += speedBuff;
+            StartCoroutine(speedCooldown());
+
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -185,6 +193,12 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+    }
+
+    IEnumerator speedCooldown()
+    {
+        yield return new WaitForSeconds(speedBuffTime);
+        moveSpeed = moveSpeedPrevious;
     }
 }
 
