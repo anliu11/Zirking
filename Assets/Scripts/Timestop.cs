@@ -7,6 +7,8 @@ public class Timestop : MonoBehaviour
 {
     public GameManager gameManager;
     public Vector3 scaleChange;
+    public GameObject player;
+    public float speed;
     private Rigidbody BossRB;
 
     
@@ -14,6 +16,8 @@ public class Timestop : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        player = GameObject.Find("Player");
+        BossRB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame

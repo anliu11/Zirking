@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8172593086535043240}
   - component: {fileID: 2808481482784010178}
   - component: {fileID: 5237810366120658738}
-  - component: {fileID: 9018188947216507610}
   m_Layer: 0
   m_Name: TIMESTOPPOZONE 1
   m_TagString: aura
@@ -95,7 +94,7 @@ SphereCollider:
   m_GameObject: {fileID: 6345457465018155833}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -113,19 +112,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   scaleChange: {x: 20, y: 20, z: 20}
---- !u!54 &9018188947216507610
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6345457465018155833}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
+  player: {fileID: 0}
+  speed: 0
