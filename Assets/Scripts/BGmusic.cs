@@ -23,13 +23,13 @@ public class BGmusic : MonoBehaviour
     {
         waveNum = gameManager.GetComponent<GameManager>().wave;
 
-        if(waveNum == 10 && bossWaveActive == false)
-        {
-            audioSource.Stop();
-            audioSource.clip = bossMusic;
-            audioSource.Play();
+        //if(waveNum == 10 && bossWaveActive == false)
+        //{
+        //    audioSource.Stop();
+        //    audioSource.clip = bossMusic;
+        //    audioSource.Play();
             //audioSource.PlayOneShot(bossMusic, 2.5f);
-            bossWaveActive = true;
-        }
+        //    bossWaveActive = true;
+        //}
     }
 }

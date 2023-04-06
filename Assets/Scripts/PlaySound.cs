@@ -6,6 +6,7 @@ public class PlaySound : MonoBehaviour
 {
 
     public AudioSource soundPlayer;
+    private bool setAudioSourceInstance = false;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,12 @@ public class PlaySound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(setAudioSourceInstance == false)
+        {
+            soundPlayer = GetComponent<AudioSource>();
+            setAudioSourceInstance = true;
+            Debug.Log("Effects Audio Source is set");
+        }
     }
 
 
@@ -24,6 +30,7 @@ public class PlaySound : MonoBehaviour
     public void Play()
     {
         soundPlayer.Play();
+        Debug.Log("button click noise has played");
 
     }
 
