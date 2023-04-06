@@ -121,7 +121,7 @@ public class BossScript2 : MonoBehaviour
                     if (pauseboss > 4)
                     {
                         pauseboss = 0;
-                        speed = 5;
+                        speed = 6;
                         /* //trying to make it so that they change speed at same time.
                         minionspeed = 5;
                         */
