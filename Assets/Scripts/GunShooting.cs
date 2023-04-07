@@ -42,7 +42,7 @@ public class GunShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myInput();
+        //myInput();
     }
 
     public void myInput()
