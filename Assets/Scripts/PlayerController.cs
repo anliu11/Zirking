@@ -200,5 +200,11 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(speedBuffTime);
         moveSpeed = moveSpeedPrevious;
     }
+
+    public void GunEffects()
+    {
+        playerAudio.PlayOneShot(gunShootSound, 1.0f);
+        shootParticle.Play();
+    }
 }
 

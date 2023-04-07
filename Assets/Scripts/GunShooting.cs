@@ -60,7 +60,11 @@ public class GunShooting : MonoBehaviour
         //reloading
         if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magSize && !reloading)
         {
-
+            Reload();
+        }
+        if (readyToShoot && shooting && !reloading && bulletsLeft <= 0)
+        {
+            Reload();
         }
 
         //shooting
@@ -79,8 +83,10 @@ public class GunShooting : MonoBehaviour
         Transform currentBullet = Instantiate(bullet.transform, bulletSpawn.transform.position, Quaternion.identity);
         currentBullet.rotation = bulletSpawn.transform.rotation;
 
+        /*
         bulletsLeft--;
         bulletsShot++;
+        */
 
         //Invoke resetShot
         if (allowInvoke)
