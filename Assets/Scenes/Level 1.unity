@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 34089744}
   - component: {fileID: 34089743}
   - component: {fileID: 34089742}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bullet Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3728,6 +3728,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: blasterC
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1786a69df6ff442438d45b47974d7754, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1786a69df6ff442438d45b47974d7754, type: 3}
 --- !u!4 &380270516 stripped
@@ -4393,8 +4397,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 8248806696218223792, guid: 292f2f883a3874f468195c2f14c5085f, type: 3}
   bossPrefab: {fileID: 4242452295651010834, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
   medpackPrefab: {fileID: 3234095999662694036, guid: 11573369437d746b18de5af3ea17f7ec, type: 3}
-  delay: 0
-  waveCount: 9
+  waveCount: 1
   bossCount: 1
   bossCounter: 0
   totalEnimies: 0
@@ -14458,6 +14461,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -4819223349682164798, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -3949436395788077964, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -3924740746642414787, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -3670109843512462444, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
@@ -14478,13 +14493,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -2652130149045022449, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2511240423080479738, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668100837431030959, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d58d768914614483bf742ba2339c48a, type: 3}

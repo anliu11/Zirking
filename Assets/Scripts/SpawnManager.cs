@@ -11,7 +11,6 @@ public class SpawnManager : MonoBehaviour
     private float spawnRangeX = 10;
     private float spawnZMin = 15; // set min spawn Z
     private float spawnZMax = 25; // set max spawn Z
-    public float delay = 0;
 
     public int waveCount = 1;
     public int bossCount;
@@ -40,26 +39,11 @@ public class SpawnManager : MonoBehaviour
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
         bossCounter = GameObject.FindGameObjectsWithTag("Boss").Length;
         totalEnimies = enemyCount + bossCounter;
-        if (waveCount == 10 && totalEnimies == 0)
-        {
-            Instantiate(bossPrefab, GenerateSpawnPosition(), bossPrefab.transform.rotation);
-            waveCount += 1;
-        }
-        if (totalEnimies == 0 && waveCount < 10)
+        if  (totalEnimies == 0)
         {
             spawnWave(waveCount);
             waveCount += 1;
         }
-        if (waveCount == 11)
-        {
-            delay += Time.deltaTime;
-            if (delay > 5 && totalEnimies == 0)
-            {
-                waveCount += 1;
-                delay = 0;
-            }
-        }
-    
     }
     void spawnWave(int waveCount)
     {
@@ -71,6 +55,15 @@ public class SpawnManager : MonoBehaviour
         if (GameObject.FindGameObjectsWithTag("MedKit").Length == 0)
         {
             Instantiate(medpackPrefab, GenerateSpawnPosition(), medpackPrefab.transform.rotation);
+        }
+        if (waveCount % 10 == 0)
+        {
+            for (int c = 0; c < bossCount; c++)
+            {
+                bossCounter += 1;
+                Instantiate(bossPrefab, GenerateSpawnPosition(), bossPrefab.transform.rotation);
+            }
+            bossCount += 1; 
         }
     }
 }
