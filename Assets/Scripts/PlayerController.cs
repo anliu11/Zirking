@@ -77,9 +77,15 @@ public class PlayerController : MonoBehaviour
             MovePlayer();
             Boundries();
 
-            // Makes the player shoot
+            GetComponent<GunShooting>().myInput();
+            //GunEffects();
+
+            /*
+             // Makes the player shoot
             if (Input.GetMouseButtonDown(0))
             {
+                GetComponent<GunShooting>().myInput();
+                
                 bulletSpawned = Instantiate(bullet.transform, bulletSpawn.transform.position, Quaternion.identity);
                 bulletSpawned.rotation = bulletSpawn.transform.rotation;
                 playerAudio.PlayOneShot(gunShootSound, 1.0f);
@@ -87,6 +93,8 @@ public class PlayerController : MonoBehaviour
                 
 
             }
+            */
+
             //========================================================================
 
             //Set MaxHP
@@ -199,6 +207,12 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(speedBuffTime);
         moveSpeed = moveSpeedPrevious;
+    }
+
+    public void GunEffects()
+    {
+        playerAudio.PlayOneShot(gunShootSound, 1.0f);
+        shootParticle.Play();
     }
 }
 
