@@ -14709,7 +14709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 3694550084101543648, guid: 633927ccd02304e0c85f2e91f0b69928, type: 3}
   shootForce: 10
-  timeBetweenShooting: 0.1
+  timeBetweenShooting: 0.15
   reloadTime: 1.5
   timeBetweenShots: 0
   magSize: 100

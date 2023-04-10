@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
             Boundries();
 
             GetComponent<GunShooting>().myInput();
-            GunEffects();
+            //GunEffects();
 
             /*
              // Makes the player shoot
