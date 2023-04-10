@@ -14695,6 +14695,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &1542752527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542752521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4150f3c0ade634e65a86e7eaa314438e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 3694550084101543648, guid: 633927ccd02304e0c85f2e91f0b69928, type: 3}
+  shootForce: 10
+  timeBetweenShooting: 0.1
+  reloadTime: 1.5
+  timeBetweenShots: 0
+  magSize: 100
+  bulletsPerTap: 1
+  allowButtonHold: 1
+  shooting: 0
+  readyToShoot: 0
+  reloading: 0
+  cam: {fileID: 963194227}
+  bulletSpawn: {fileID: 34089741}
+  allowInvoke: 1
 --- !u!1001 &1550266937
 PrefabInstance:
   m_ObjectHideFlags: 0
