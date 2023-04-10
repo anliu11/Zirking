@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip healthKitSound;
     public AudioClip bonk;
     public bool abilityboss3;
+    public GameObject spherebody;
+    public bool timezoned2;
 
     // Start is called before the first frame update
     void Start()
@@ -40,12 +42,15 @@ public class PlayerController : MonoBehaviour
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         BossObject = GameObject.Find("Boss Zombie");
         abilityboss3 = gameManager.GetComponent<GameManager>().vampireability;
+        spherebody =  GameObject.Find("Spherebody");
+
    
     }
 
     // Update is called once per frame
     void Update()
     {
+        timezoned2 = spherebody.GetComponent<Timestop2>().timezoned;
         if (hP <= 0)
         {
             moveSpeed = 0;
