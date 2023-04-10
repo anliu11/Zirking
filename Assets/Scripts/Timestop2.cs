@@ -6,50 +6,29 @@ using Random=UnityEngine.Random;
 
 public class Timestop2 : MonoBehaviour
 {
-    private int playerhP;
-    private Rigidbody BossRB;
-    
-    public Vector3 scaleChange;
-    public float abilitytimer;
-    public float speed;
-    public int hitPoints;
-    public GameObject player;
-    public GameObject aura;
     public GameManager gameManager;
-    public ParticleSystem damageParticle;
+    public float sphereRadius;
+    public float playeralv;
+    int layerId = 6;
+    public LayerMask player;
+    public bool timezoned;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
-        BossRB = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        timezoned = false; 
     }
-
     // Update is called once per frame
     void Update()
     {
+        int layerMask = 1 << layerId;
         if (gameManager.GetComponent<GameManager>().isGameActive == true)
         {
-            //looks at the player
-            this.transform.LookAt(player.transform);
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
-            playerhP = player.GetComponent<PlayerController>().hP;
-            transform.localScale += (scaleChange * Time.deltaTime);
-        }
-
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        int damage = Random.Range(15,25);
-        if (other.gameObject.CompareTag("Projectile"))
-        {
-            Destroy(other.gameObject);
-            hitPoints -= damage;
-            damageParticle.Play();
-            if (hitPoints <= 0)
+            if (Physics.CheckSphere(transform.position, sphereRadius, player))
             {
-                Destroy(gameObject);
+            Debug.Log("zone");
+            timezoned = true;
             }
         }
     }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8172593086535043240}
   - component: {fileID: 2808481482784010178}
   - component: {fileID: 894862074380470329}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TIMESTOPPOZONE 1
   m_TagString: aura
   m_Icon: {fileID: 0}
