@@ -21,8 +21,11 @@ public class PlayerController : MonoBehaviour
     public Camera camera;
     private Transform bulletSpawned;
     public ParticleSystem shootParticle;
+
+    public int medkitCount;
     public int hP;
     private int maxHP = 100;
+
     public HealthBar healthBar;
     public GameManager gameManager;
     public GameObject BossObject;
@@ -60,7 +63,15 @@ public class PlayerController : MonoBehaviour
             Plane playerPlane = new Plane(Vector3.up, transform.position);
             Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
             float hitDist = 0.0f;
-
+            if (Input.GetKeyDown(KeyCode.F) && medkitCount > 0)
+            {
+                medkitCount -= 1;
+                hP += 100;
+                playerAudio.PlayOneShot(healthKitSound, 0.5f);
+                healthBar.SetHealth(hP);
+                moveSpeed += speedBuff;
+                StartCoroutine(speedCooldown());
+            }
             if (playerPlane.Raycast(ray, out hitDist))
             {
                 Vector3 targetPoint = ray.GetPoint(hitDist);
@@ -103,8 +114,18 @@ public class PlayerController : MonoBehaviour
                 hP = maxHP;
             }
             BossDps = BossObject.GetComponent<BossScript>().bossdps;
+
+           
         }
-        
+         if(Input.GetKeyDown(KeyCode.F) && medkitCount > 0)
+            {
+                medkitCount -= 1;
+                hP += 100;
+                playerAudio.PlayOneShot(healthKitSound, 0.5f);
+                healthBar.SetHealth(hP);
+                moveSpeed += speedBuff;
+                StartCoroutine(speedCooldown());
+            }
     }
     // Part of player movement system
     void FixedUpdate()
@@ -138,12 +159,9 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("MedKit"))
         {
             Debug.Log("Collected MedKit");
-            hP += 100;
-            playerAudio.PlayOneShot(healthKitSound, 0.5f);
-            healthBar.SetHealth(hP);
+            medkitCount += 1;
 
-            moveSpeed += speedBuff;
-            StartCoroutine(speedCooldown());
+            
 
         }
     }
