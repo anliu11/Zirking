@@ -72,6 +72,7 @@ public class GunShooting : MonoBehaviour
         {
             bulletsShot = 0;
             Shoot();
+            GetComponent<PlayerController>().GunEffects();
         }
     }
 
