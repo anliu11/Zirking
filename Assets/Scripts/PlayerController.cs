@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
     public AudioClip gunShootSound;
     public AudioClip healthKitSound;
     public AudioClip bonk;
-    public bool abilityboss3;
     public GameObject spherebody;
     public bool timezoned2;
 
@@ -41,7 +40,6 @@ public class PlayerController : MonoBehaviour
         healthBar.SetMaxHealth(maxHP);
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         BossObject = GameObject.Find("Boss Zombie");
-        abilityboss3 = gameManager.GetComponent<GameManager>().vampireability;
         spherebody =  GameObject.Find("Spherebody");
 
    
@@ -50,18 +48,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timezoned2 = spherebody.GetComponent<Timestop2>().timezoned;
+        Timestopped();
         if (hP <= 0)
         {
             moveSpeed = 0;
-        }
-        if (abilityboss3 == true)
-        {
-            moveSpeed = 0;
-        }
-        else
-        {
-            moveSpeed = 5;
         }
         if (gameManager.GetComponent<GameManager>().isGameActive == true)
         {
@@ -131,6 +121,18 @@ public class PlayerController : MonoBehaviour
         if (transform.position.z > zBound)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
+        }
+    }
+    void Timestopped()
+    {
+        timezoned2 = spherebody.GetComponent<Timestop2>().timezoned;
+        if (timezoned2 == true)
+        {
+            moveSpeed = 0;
+        }
+        else
+        {
+            moveSpeed = 5;
         }
     }
     //Kills player when hp = 0 //When Collecting MedicKit Heal 
