@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     // Movement Variables
     public float moveSpeed;
+    public float speedBuff;
+    public float speedBuffTime;
+    private float moveSpeedPrevious;
     private Vector3 moveInput;
     private Vector3 moveVelocity;
 
@@ -18,8 +21,11 @@ public class PlayerController : MonoBehaviour
     public Camera camera;
     private Transform bulletSpawned;
     public ParticleSystem shootParticle;
+
+    public int medkitCount;
     public int hP;
     private int maxHP = 100;
+
     public HealthBar healthBar;
     public GameManager gameManager;
     public GameObject BossObject;
@@ -28,8 +34,6 @@ public class PlayerController : MonoBehaviour
     public AudioClip gunShootSound;
     public AudioClip healthKitSound;
     public AudioClip bonk;
-    public GameObject spherebody;
-    public bool timezoned2;
 
     // Start is called before the first frame update
     void Start()
@@ -40,27 +44,36 @@ public class PlayerController : MonoBehaviour
         healthBar.SetMaxHealth(maxHP);
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         BossObject = GameObject.Find("Boss Zombie");
-        spherebody =  GameObject.Find("Spherebody");
 
+        moveSpeedPrevious = moveSpeed;
    
     }
 
     // Update is called once per frame
     void Update()
     {
-        Timestopped();
         if (hP <= 0)
         {
             moveSpeed = 0;
         }
+
         if (gameManager.GetComponent<GameManager>().isGameActive == true)
         {
             // Makes the player look towards the camera
             Plane playerPlane = new Plane(Vector3.up, transform.position);
             Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
             float hitDist = 0.0f;
+            if (Input.GetKeyDown(KeyCode.F) && medkitCount > 0)
+            {
+                medkitCount -= 1;
+                hP += 100;
+                playerAudio.PlayOneShot(healthKitSound, 0.5f);
+                healthBar.SetHealth(hP);
+                moveSpeed += speedBuff;
+                StartCoroutine(speedCooldown());
+            }
 
-            if (playerPlane.Raycast(ray, out hitDist))
+                if (playerPlane.Raycast(ray, out hitDist))
             {
                 Vector3 targetPoint = ray.GetPoint(hitDist);
                 Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
@@ -76,9 +89,15 @@ public class PlayerController : MonoBehaviour
             MovePlayer();
             Boundries();
 
-            // Makes the player shoot
+            GetComponent<GunShooting>().myInput();
+            //GunEffects();
+
+            /*
+             // Makes the player shoot
             if (Input.GetMouseButtonDown(0))
             {
+                GetComponent<GunShooting>().myInput();
+                
                 bulletSpawned = Instantiate(bullet.transform, bulletSpawn.transform.position, Quaternion.identity);
                 bulletSpawned.rotation = bulletSpawn.transform.rotation;
                 playerAudio.PlayOneShot(gunShootSound, 1.0f);
@@ -86,6 +105,8 @@ public class PlayerController : MonoBehaviour
                 
 
             }
+            */
+
             //========================================================================
 
             //Set MaxHP
@@ -123,27 +144,13 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
         }
     }
-    void Timestopped()
-    {
-        timezoned2 = spherebody.GetComponent<Timestop2>().timezoned;
-        if (timezoned2 == true)
-        {
-            moveSpeed = 0;
-        }
-        else
-        {
-            moveSpeed = 5;
-        }
-    }
     //Kills player when hp = 0 //When Collecting MedicKit Heal 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("MedKit"))
         {
             Debug.Log("Collected MedKit");
-            hP += 100;
-            playerAudio.PlayOneShot(healthKitSound, 0.5f);
-            healthBar.SetHealth(hP);
+            medkitCount += 1;
 
         }
     }
@@ -184,10 +191,6 @@ public class PlayerController : MonoBehaviour
                     gameObject.SetActive(false);
                 }
             }
-            if (collision.gameObject.CompareTag("aura"))
-            {
-                moveSpeed = 0;
-            }
             if (BossDps == false)
             {
                 int damage = Random.Range(20,25);
@@ -205,6 +208,18 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+    }
+
+    IEnumerator speedCooldown()
+    {
+        yield return new WaitForSeconds(speedBuffTime);
+        moveSpeed = moveSpeedPrevious;
+    }
+
+    public void GunEffects()
+    {
+        playerAudio.PlayOneShot(gunShootSound, 1.0f);
+        shootParticle.Play();
     }
 }
 

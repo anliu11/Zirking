@@ -10,6 +10,7 @@ public class BossScript : MonoBehaviour
     public float speed;
     private Rigidbody BossRB;
     public GameObject player;
+    public TrailRenderer dashTrail;
     public int hitPoints;
     private int playerhP;
     public GameManager gameManager;
@@ -25,6 +26,7 @@ public class BossScript : MonoBehaviour
         InvokeRepeating("Ability", 4, 6);
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         bossdps = false;
+        dashTrail = GetComponent<TrailRenderer>();
     }
 
     // Update is called once per frame
@@ -57,6 +59,7 @@ public class BossScript : MonoBehaviour
     {
         speed = 0;
         chargeParticle.Play();
+        dashTrail.enabled = true;
         StartCoroutine(BuildUp());
         StartCoroutine(AbilityTimer());
     }
@@ -71,5 +74,6 @@ public class BossScript : MonoBehaviour
     {
         yield return new WaitForSeconds(4);
         bossdps = false;
+        dashTrail.enabled = false;
     }
 }  
