@@ -6755,6 +6755,8 @@ MonoBehaviour:
   bullet: {fileID: 3694550084101543648, guid: 633927ccd02304e0c85f2e91f0b69928, type: 3}
   camera: {fileID: 963194227}
   shootParticle: {fileID: 0}
+  medkitCount: 0
+  maxMedkitCount: 0
   hP: 0
   healthBar: {fileID: 0}
   gameManager: {fileID: 0}
@@ -8450,10 +8452,10 @@ Transform:
   - {fileID: 1053103052}
   - {fileID: 1114603071}
   - {fileID: 553168340}
+  - {fileID: 594672230}
   - {fileID: 1073340837}
   - {fileID: 730528668}
   - {fileID: 648435751}
-  - {fileID: 594672230}
   - {fileID: 2070098625}
   - {fileID: 510668238}
   m_Father: {fileID: 0}
@@ -9246,7 +9248,7 @@ Transform:
   - {fileID: 1602556226}
   - {fileID: 1407516530}
   m_Father: {fileID: 542736164}
-  m_RootOrder: 105
+  m_RootOrder: 102
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &596239882
 PrefabInstance:
@@ -25554,6 +25556,8 @@ MonoBehaviour:
   bullet: {fileID: 3694550084101543648, guid: 633927ccd02304e0c85f2e91f0b69928, type: 3}
   camera: {fileID: 963194227}
   shootParticle: {fileID: 0}
+  medkitCount: 0
+  maxMedkitCount: 0
   hP: 0
   healthBar: {fileID: 1175481803}
   gameManager: {fileID: 97922863}
@@ -25687,6 +25691,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &1542752527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542752521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4150f3c0ade634e65a86e7eaa314438e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 3694550084101543648, guid: 633927ccd02304e0c85f2e91f0b69928, type: 3}
+  shootForce: 10
+  timeBetweenShooting: 0.14
+  reloadTime: 1.5
+  timeBetweenShots: 0
+  magSize: 100
+  bulletsPerTap: 1
+  allowButtonHold: 1
+  shooting: 0
+  readyToShoot: 0
+  reloading: 0
+  cam: {fileID: 963194227}
+  bulletSpawn: {fileID: 34089741}
+  allowInvoke: 1
 --- !u!4 &1545733833 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: bc26e37faef03d243b7786ffcf0bea53, type: 3}
