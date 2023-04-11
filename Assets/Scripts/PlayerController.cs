@@ -22,7 +22,9 @@ public class PlayerController : MonoBehaviour
     private Transform bulletSpawned;
     public ParticleSystem shootParticle;
 
+    // Medkit/Health Variables
     public int medkitCount;
+    public int maxMedkitCount;
     public int hP;
     private int maxHP = 100;
 
@@ -63,6 +65,8 @@ public class PlayerController : MonoBehaviour
             Plane playerPlane = new Plane(Vector3.up, transform.position);
             Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
             float hitDist = 0.0f;
+
+            // When player presses F, uses one donut if more than 0
             if (Input.GetKeyDown(KeyCode.F) && medkitCount > 0)
             {
                 medkitCount -= 1;
@@ -73,7 +77,7 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(speedCooldown());
             }
 
-                if (playerPlane.Raycast(ray, out hitDist))
+            if (playerPlane.Raycast(ray, out hitDist))
             {
                 Vector3 targetPoint = ray.GetPoint(hitDist);
                 Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
@@ -144,16 +148,18 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
         }
     }
+
     //Kills player when hp = 0 //When Collecting MedicKit Heal 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("MedKit"))
+        if (other.CompareTag("MedKit") && medkitCount < maxMedkitCount)
         {
             Debug.Log("Collected MedKit");
             medkitCount += 1;
 
         }
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
