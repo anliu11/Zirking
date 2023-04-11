@@ -4150,6 +4150,7 @@ MonoBehaviour:
   camera: {fileID: 963194227}
   shootParticle: {fileID: 0}
   medkitCount: 0
+  maxMedkitCount: 0
   hP: 0
   healthBar: {fileID: 800840293}
   gameManager: {fileID: 0}
@@ -14564,6 +14565,7 @@ MonoBehaviour:
   camera: {fileID: 963194227}
   shootParticle: {fileID: 0}
   medkitCount: 0
+  maxMedkitCount: 2
   hP: 0
   healthBar: {fileID: 800840293}
   gameManager: {fileID: 0}
