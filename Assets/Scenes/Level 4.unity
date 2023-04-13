@@ -26270,7 +26270,7 @@ MonoBehaviour:
   camera: {fileID: 963194227}
   shootParticle: {fileID: 0}
   medkitCount: 0
-  maxMedkitCount: 0
+  maxMedkitCount: 3
   hP: 0
   healthBar: {fileID: 1175481803}
   gameManager: {fileID: 97922863}
