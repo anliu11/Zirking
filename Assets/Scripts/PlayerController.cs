@@ -34,6 +34,12 @@ public class PlayerController : MonoBehaviour
     public AudioClip gunShootSound;
     public AudioClip healthKitSound;
     public AudioClip bonk;
+<<<<<<< HEAD
+=======
+    public bool abilityboss3;
+    public GameObject spherebody;
+    public bool timezoned2;
+>>>>>>> parent of 4bd7483 (fixed player speed)
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +50,11 @@ public class PlayerController : MonoBehaviour
         healthBar.SetMaxHealth(maxHP);
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         BossObject = GameObject.Find("Boss Zombie");
+<<<<<<< HEAD
+=======
+        abilityboss3 = gameManager.GetComponent<GameManager>().vampireability;
+        spherebody =  GameObject.Find("Spherebody");
+>>>>>>> parent of 4bd7483 (fixed player speed)
 
         moveSpeedPrevious = moveSpeed;
    
@@ -52,11 +63,26 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
+=======
+        timezoned2 = spherebody.GetComponent<Timestop2>().timezoned;
+>>>>>>> parent of 4bd7483 (fixed player speed)
         if (hP <= 0)
         {
             moveSpeed = 0;
         }
+<<<<<<< HEAD
 
+=======
+        if (abilityboss3 == true)
+        {
+            moveSpeed = 0;
+        }
+        else
+        {
+            moveSpeed = 5;
+        }
+>>>>>>> parent of 4bd7483 (fixed player speed)
         if (gameManager.GetComponent<GameManager>().isGameActive == true)
         {
             // Makes the player look towards the camera
