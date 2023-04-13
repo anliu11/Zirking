@@ -37,6 +37,12 @@ public class PlayerController : MonoBehaviour
     public AudioClip healthKitSound;
     public AudioClip bonk;
 
+    //player stances
+    public GameObject idleStance;
+    public GameObject shootStance;
+    public GameObject healStance;
+    public float healStanceTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +54,7 @@ public class PlayerController : MonoBehaviour
         BossObject = GameObject.Find("Boss Zombie");
 
         moveSpeedPrevious = moveSpeed;
-   
+
     }
 
     // Update is called once per frame
@@ -75,6 +81,8 @@ public class PlayerController : MonoBehaviour
                 healthBar.SetHealth(hP);
                 moveSpeed += speedBuff;
                 StartCoroutine(speedCooldown());
+
+                HealStance();
             }
 
             if (playerPlane.Raycast(ray, out hitDist))
@@ -120,7 +128,7 @@ public class PlayerController : MonoBehaviour
             }
             BossDps = BossObject.GetComponent<BossScript>().bossdps;
         }
-        
+
     }
     // Part of player movement system
     void FixedUpdate()
@@ -164,7 +172,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            int damage = Random.Range(15,20);
+            int damage = Random.Range(15, 20);
             Debug.Log("Collided with " + collision.gameObject.name);
             hP -= damage;
             healthBar.SetHealth(hP);
@@ -185,7 +193,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Collided with " + collision.gameObject.name);
             if (BossDps == true)
             {
-                int damage = Random.Range(25,30);
+                int damage = Random.Range(25, 30);
                 hP -= damage;
                 healthBar.SetHealth(hP);
 
@@ -199,7 +207,7 @@ public class PlayerController : MonoBehaviour
             }
             if (BossDps == false)
             {
-                int damage = Random.Range(20,25);
+                int damage = Random.Range(20, 25);
                 hP -= damage;
                 healthBar.SetHealth(hP);
 
@@ -226,6 +234,37 @@ public class PlayerController : MonoBehaviour
     {
         playerAudio.PlayOneShot(gunShootSound, 1.0f);
         shootParticle.Play();
+    }
+
+    //switches player stances
+    public void ShootStance()
+    {
+        shootStance.gameObject.SetActive(true);
+        idleStance.gameObject.SetActive(false);
+        healStance.gameObject.SetActive(false);
+
+    }
+
+    public void IdleStance()
+    {
+        idleStance.gameObject.SetActive(true);
+        shootStance.gameObject.SetActive(false);
+        healStance.gameObject.SetActive(false);
+    }
+
+    public void HealStance()
+    {
+        healStance.gameObject.SetActive(true);
+        shootStance.gameObject.SetActive(false);
+        idleStance.gameObject.SetActive(false);
+
+        StartCoroutine(HealStanceTimer());
+    }
+
+    IEnumerator HealStanceTimer()
+    {
+        yield return new WaitForSeconds(healStanceTime);
+        IdleStance();
     }
 }
 

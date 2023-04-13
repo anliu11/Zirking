@@ -25,6 +25,7 @@ public class GunShooting : MonoBehaviour
 
     //bug fixing
     public bool allowInvoke = true;
+    public bool isShooting = false;
 
     //runs when scene starts
     private void Awake()
@@ -70,9 +71,15 @@ public class GunShooting : MonoBehaviour
         //shooting
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
         {
+            GetComponent<PlayerController>().ShootStance();
             bulletsShot = 0;
             Shoot();
             GetComponent<PlayerController>().GunEffects();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            GetComponent<PlayerController>().IdleStance();
         }
     }
 
