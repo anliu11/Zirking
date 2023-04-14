@@ -26,6 +26,8 @@ public class GunShooting : MonoBehaviour
     //bug fixing
     public bool allowInvoke = true;
     public bool isShooting = false;
+    public bool gunOut;
+    public bool donutOut;
 
     //runs when scene starts
     private void Awake()
@@ -44,6 +46,8 @@ public class GunShooting : MonoBehaviour
     void Update()
     {
         //myInput();
+        gunOut = GetComponent<PlayerController>().isGunOut;
+        donutOut = GetComponent<PlayerController>().isDonutOut;
     }
 
     public void myInput()
@@ -69,7 +73,7 @@ public class GunShooting : MonoBehaviour
         }
 
         //shooting
-        if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
+        if (readyToShoot && shooting && !reloading && bulletsLeft > 0 && gunOut == true && donutOut != true)
         {
             GetComponent<PlayerController>().ShootStance();
             bulletsShot = 0;

@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
     public GameObject shootStance;
     public GameObject healStance;
     public float healStanceTime;
+    public bool isGunOut;
+    public bool isDonutOut;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +56,7 @@ public class PlayerController : MonoBehaviour
         BossObject = GameObject.Find("Boss Zombie");
 
         moveSpeedPrevious = moveSpeed;
+        isGunOut = true;
 
     }
 
@@ -72,18 +75,26 @@ public class PlayerController : MonoBehaviour
             Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
             float hitDist = 0.0f;
 
-            // When player presses F, uses one donut if more than 0
-            if (Input.GetKeyDown(KeyCode.F) && medkitCount > 0)
+            // When player presses 2 or F, brings out medkit
+            if ((Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.F)) && medkitCount > 0)
             {
-                medkitCount -= 1;
-                hP += 100;
-                playerAudio.PlayOneShot(healthKitSound, 0.5f);
-                healthBar.SetHealth(hP);
-                moveSpeed += speedBuff;
-                StartCoroutine(speedCooldown());
-
                 HealStance();
             }
+
+            //When player presses 1, brings out gun
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                IdleStance();
+            }
+
+            // When player clicks, uses medkit
+            if (isDonutOut == true && Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                StartCoroutine(HealStanceTimer());
+                UseMedKit();
+            }
+
+
 
             if (playerPlane.Raycast(ray, out hitDist))
             {
@@ -242,6 +253,8 @@ public class PlayerController : MonoBehaviour
         shootStance.gameObject.SetActive(true);
         idleStance.gameObject.SetActive(false);
         healStance.gameObject.SetActive(false);
+        isGunOut = true;
+        isDonutOut = false;
 
     }
 
@@ -250,6 +263,8 @@ public class PlayerController : MonoBehaviour
         idleStance.gameObject.SetActive(true);
         shootStance.gameObject.SetActive(false);
         healStance.gameObject.SetActive(false);
+        isGunOut = true;
+        isDonutOut = false;
     }
 
     public void HealStance()
@@ -258,13 +273,29 @@ public class PlayerController : MonoBehaviour
         shootStance.gameObject.SetActive(false);
         idleStance.gameObject.SetActive(false);
 
-        StartCoroutine(HealStanceTimer());
+        isGunOut = false;
+        isDonutOut = true;
+        //StartCoroutine(HealStanceTimer());
+    }
+
+    public void UseMedKit()
+    {
+        medkitCount -= 1;
+        hP += 100;
+        playerAudio.PlayOneShot(healthKitSound, 0.5f);
+        healthBar.SetHealth(hP);
+        moveSpeed += speedBuff;
+        StartCoroutine(speedCooldown());
+
+        if (medkitCount < 0)
+        {
+            medkitCount = 0;
+        }
     }
 
     IEnumerator HealStanceTimer()
     {
         yield return new WaitForSeconds(healStanceTime);
-        IdleStance();
     }
 }
 

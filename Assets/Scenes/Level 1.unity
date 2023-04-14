@@ -15273,6 +15273,7 @@ MonoBehaviour:
   cam: {fileID: 963194227}
   bulletSpawn: {fileID: 34089741}
   allowInvoke: 1
+  isShooting: 0
 --- !u!1001 &1550266937
 PrefabInstance:
   m_ObjectHideFlags: 0
