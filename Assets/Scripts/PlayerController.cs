@@ -84,6 +84,8 @@ public class PlayerController : MonoBehaviour
                 {
                     gameManager.donutSilhouette.SetActive(false);
                     gameManager.staffSilhouette.SetActive(true);
+                    gameManager.ammoCount.SetActive(false);
+                    gameManager.medKitCount.SetActive(true);
                 }
             }
 
@@ -93,6 +95,8 @@ public class PlayerController : MonoBehaviour
                 IdleStance();
                 gameManager.staffSilhouette.SetActive(false);
                 gameManager.donutSilhouette.SetActive(true);
+                gameManager.ammoCount.SetActive(true);
+                gameManager.medKitCount.SetActive(false);
             }
 
             // When player clicks, uses medkit
@@ -103,6 +107,8 @@ public class PlayerController : MonoBehaviour
 
                 gameManager.staffSilhouette.SetActive(false);
                 gameManager.donutSilhouette.SetActive(true);
+                gameManager.ammoCount.SetActive(true);
+                gameManager.medKitCount.SetActive(false);
             }
 
 
