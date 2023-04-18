@@ -76,15 +76,23 @@ public class PlayerController : MonoBehaviour
             float hitDist = 0.0f;
 
             // When player presses 2 or F, brings out medkit
-            if ((Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.F)) && medkitCount > 0)
+            if ((Input.GetKeyDown(KeyCode.Alpha2)) && medkitCount > 0)
             {
                 HealStance();
+
+                if (medkitCount > 0)
+                {
+                    gameManager.donutSilhouette.SetActive(false);
+                    gameManager.staffSilhouette.SetActive(true);
+                }
             }
 
             //When player presses 1, brings out gun
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 IdleStance();
+                gameManager.staffSilhouette.SetActive(false);
+                gameManager.donutSilhouette.SetActive(true);
             }
 
             // When player clicks, uses medkit
@@ -92,6 +100,9 @@ public class PlayerController : MonoBehaviour
             {
                 StartCoroutine(HealStanceTimer());
                 UseMedKit();
+
+                gameManager.staffSilhouette.SetActive(false);
+                gameManager.donutSilhouette.SetActive(true);
             }
 
 

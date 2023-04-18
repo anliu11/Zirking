@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
     public bool waveDestroy = true;
     public GameObject waveDestroySound;
 
+    //Inventory UI
+    public GameObject inventoryUI;
+    public GameObject staffSilhouette;
+    public GameObject donutSilhouette;
+
 
 
     // Start is called before the first frame update
@@ -140,6 +145,10 @@ public class GameManager : MonoBehaviour
         returnButtonMain.gameObject.SetActive(false);
         playerHud.gameObject.SetActive(true);
         healthBar.SetActive(true);
+
+        inventoryUI.SetActive(true);
+        donutSilhouette.SetActive(true);
+
 
         cursorManeger.GetComponent<CursorManeger>().CrossHairCursor();
     }
