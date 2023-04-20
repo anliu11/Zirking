@@ -46,6 +46,9 @@ public class GameManager : MonoBehaviour
     public int medkitnum;
     public int maxmedkitnum;
 
+    //Restart Scene Delay Num
+    public float RestartSceneDelayTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -131,7 +134,8 @@ public class GameManager : MonoBehaviour
     // Runs when the restart button is pressed.
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartCoroutine(restartSceneDelay());
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     // Runs when any of the starting buttons are pressed.
@@ -173,5 +177,12 @@ public class GameManager : MonoBehaviour
         gameManagerAudio.Stop();
         gameManagerAudio.clip = bossDeathSound;
         gameManagerAudio.Play();
+    }
+
+    IEnumerator restartSceneDelay()
+    {
+        yield return new WaitForSeconds(RestartSceneDelayTime);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 }

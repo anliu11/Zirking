@@ -872,6 +872,9 @@ MonoBehaviour:
   medKitCount: {fileID: 1847898968}
   ammoCountText: {fileID: 1615481632}
   medkitCountText: {fileID: 1740141656}
+  medkitnum: 0
+  maxmedkitnum: 0
+  RestartSceneDelayTime: 0.5
 --- !u!4 &97922864
 Transform:
   m_ObjectHideFlags: 0
@@ -1967,6 +1970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNum: -1
+  sceneDelayTime: 0.5
 --- !u!114 &203809776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2013,6 +2017,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 203809775}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 912761787}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -2463,6 +2479,18 @@ MonoBehaviour:
       - m_Target: {fileID: 97922863}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 912761787}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9738,7 +9766,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 19b12cac5269c4478b7f4cbf8b79f307, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f2c1f927bbc1244498bfbaf126badfdf, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -15820,6 +15848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNum: -1
+  sceneDelayTime: 0.75
 --- !u!114 &1571133145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15904,6 +15933,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1571133144}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 912761787}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -16653,6 +16694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNum: -1
+  sceneDelayTime: 0.75
 --- !u!114 &1607188883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16709,7 +16751,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 912761787}
         m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
@@ -17791,7 +17833,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 912761787}
         m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
@@ -22075,6 +22117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNum: 1
+  sceneDelayTime: 0.75
 --- !u!114 &2128563563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22131,7 +22174,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 912761787}
         m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1

@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public int SceneNum;
+    public float sceneDelayTime;
 
     public void Play()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(switchScenceDelay());
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + SceneNum);
     }
 
@@ -23,5 +25,11 @@ public class MainMenu : MonoBehaviour
     void Update()
     {
         
+    }
+
+    //screen switch delay
+    IEnumerator switchScenceDelay()
+    {
+        yield return new WaitForSeconds(sceneDelayTime);
     }
 }
