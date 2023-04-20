@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         StartCoroutine(switchScenceDelay());
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + SceneNum);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + SceneNum);
     }
 
     // Start is called before the first frame update
@@ -31,5 +31,7 @@ public class MainMenu : MonoBehaviour
     IEnumerator switchScenceDelay()
     {
         yield return new WaitForSeconds(sceneDelayTime);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + SceneNum);
+
     }
 }

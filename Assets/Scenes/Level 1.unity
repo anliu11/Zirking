@@ -1970,7 +1970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNum: -1
-  sceneDelayTime: 0.5
+  sceneDelayTime: 0.3
 --- !u!114 &203809776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8909,6 +8909,9 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 1167859122}
+  bossHealth: 0
+  boss: {fileID: 0}
+  healthNumber: {fileID: 0}
 --- !u!1001 &801579126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15848,7 +15851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNum: -1
-  sceneDelayTime: 0.75
+  sceneDelayTime: 0.3
 --- !u!114 &1571133145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16694,7 +16697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNum: -1
-  sceneDelayTime: 0.75
+  sceneDelayTime: 0.3
 --- !u!114 &1607188883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22117,7 +22120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNum: 1
-  sceneDelayTime: 0.75
+  sceneDelayTime: 0.5
 --- !u!114 &2128563563
 MonoBehaviour:
   m_ObjectHideFlags: 0
