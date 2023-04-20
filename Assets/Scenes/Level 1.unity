@@ -998,7 +998,7 @@ GameObject:
   - component: {fileID: 98536356}
   - component: {fileID: 98536355}
   - component: {fileID: 98536354}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Spherebody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
