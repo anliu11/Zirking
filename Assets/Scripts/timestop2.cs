@@ -7,7 +7,6 @@ public class timestop2 : MonoBehaviour
     public GameManager gameManager;
     public float sphereRadius;
     public float playeralv;
-    int layerId = 6;
     public LayerMask player;
     public bool timezoned;
 
@@ -20,7 +19,6 @@ public class timestop2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int layerMask = 1 << layerId;
         if (gameManager.GetComponent<GameManager>().isGameActive == true)
         {
             if (Physics.CheckSphere(transform.position, sphereRadius, player))

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3719694701657443208}
   - component: {fileID: 6981007314945771452}
   - component: {fileID: 8253387326154349421}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Aura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,4 +114,4 @@ MonoBehaviour:
   scaleChange: {x: 20, y: 20, z: 20}
   player:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
