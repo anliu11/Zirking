@@ -1037,7 +1037,7 @@ MonoBehaviour:
   playeralv: 0
   player:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   timezoned: 0
 --- !u!135 &98536355
 SphereCollider:
@@ -9223,6 +9223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: vampire boss
       objectReference: {fileID: 0}
+    - target: {fileID: 1438879922640990033, guid: ea4c9e4319fd441efa7d7492d84aae33, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     - target: {fileID: 1782366649010451947, guid: ea4c9e4319fd441efa7d7492d84aae33, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -9286,6 +9290,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c87047d653746e6813ccd25e4edf48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilitytimer: 0
+  speed: 0
+  hitPoints: 0
+  player: {fileID: 0}
+  aura: {fileID: 5366167999635233007, guid: 2f2c56fb1db2c4dac96b91a531471ca7, type: 3}
+  gameManager: {fileID: 0}
+  damageParticle: {fileID: 0}
 --- !u!65 &815184235
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15610,7 +15621,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d58d768914614483bf742ba2339c48a, type: 3}
       propertyPath: m_LocalPosition.x

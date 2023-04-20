@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3719694701657443208}
   - component: {fileID: 6981007314945771452}
   - component: {fileID: 8253387326154349421}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Aura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ SphereCollider:
   m_GameObject: {fileID: 5366167999635233007}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
