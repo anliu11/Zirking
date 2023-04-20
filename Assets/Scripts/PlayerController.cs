@@ -81,17 +81,23 @@ public class PlayerController : MonoBehaviour
         if (gameManager.GetComponent<GameManager>().isGameActive == true)
         {
             // Makes the player look towards the camera
-            if (timezoned2 = false)
+            if (timezoned2 = true)
             {
 
             }
-            else
-            {
+            
             Plane playerPlane = new Plane(Vector3.up, transform.position);
             Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
             float hitDist = 0.0f;
-            }
             
+            if (playerPlane.Raycast(ray, out hitDist))
+            {
+                Vector3 targetPoint = ray.GetPoint(hitDist);
+                Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
+                targetRotation.x = 0;
+                targetRotation.z = 0;
+                playerObj.transform.rotation = Quaternion.Slerp(playerObj.transform.rotation, targetRotation, 7f * Time.deltaTime);
+            }
             // When player presses 2 or F, brings out medkit
             if ((Input.GetKeyDown(KeyCode.Alpha2)) && medkitCount > 0)
             {
@@ -129,18 +135,6 @@ public class PlayerController : MonoBehaviour
             }
 
 
-            if (timezoned2 = false)
-            {
-
-            }
-            else (playerPlane.Raycast(ray, out hitDist))
-            {
-                Vector3 targetPoint = ray.GetPoint(hitDist);
-                Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
-                targetRotation.x = 0;
-                targetRotation.z = 0;
-                playerObj.transform.rotation = Quaternion.Slerp(playerObj.transform.rotation, targetRotation, 7f * Time.deltaTime);
-            }
 
 
 
