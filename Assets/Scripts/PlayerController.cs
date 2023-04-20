@@ -22,7 +22,9 @@ public class PlayerController : MonoBehaviour
     private Transform bulletSpawned;
     public ParticleSystem shootParticle;
 
+    // Medkit/Health Variables
     public int medkitCount;
+    public int maxMedkitCount;
     public int hP;
     private int maxHP = 100;
 
@@ -41,6 +43,14 @@ public class PlayerController : MonoBehaviour
     public bool timezoned2;
 >>>>>>> parent of 4bd7483 (fixed player speed)
 
+    //player stances
+    public GameObject idleStance;
+    public GameObject shootStance;
+    public GameObject healStance;
+    public float healStanceTime;
+    public bool isGunOut;
+    public bool isDonutOut;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +67,8 @@ public class PlayerController : MonoBehaviour
 >>>>>>> parent of 4bd7483 (fixed player speed)
 
         moveSpeedPrevious = moveSpeed;
-   
+        isGunOut = true;
+
     }
 
     // Update is called once per frame
@@ -89,17 +100,46 @@ public class PlayerController : MonoBehaviour
             Plane playerPlane = new Plane(Vector3.up, transform.position);
             Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
             float hitDist = 0.0f;
-            if (Input.GetKeyDown(KeyCode.F) && medkitCount > 0)
+
+            // When player presses 2 or F, brings out medkit
+            if ((Input.GetKeyDown(KeyCode.Alpha2)) && medkitCount > 0)
             {
-                medkitCount -= 1;
-                hP += 100;
-                playerAudio.PlayOneShot(healthKitSound, 0.5f);
-                healthBar.SetHealth(hP);
-                moveSpeed += speedBuff;
-                StartCoroutine(speedCooldown());
+                HealStance();
+
+                if (medkitCount > 0)
+                {
+                    gameManager.donutSilhouette.SetActive(false);
+                    gameManager.staffSilhouette.SetActive(true);
+                    gameManager.ammoCount.SetActive(false);
+                    gameManager.medKitCount.SetActive(true);
+                }
             }
 
-                if (playerPlane.Raycast(ray, out hitDist))
+            //When player presses 1, brings out gun
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                IdleStance();
+                gameManager.staffSilhouette.SetActive(false);
+                gameManager.donutSilhouette.SetActive(true);
+                gameManager.ammoCount.SetActive(true);
+                gameManager.medKitCount.SetActive(false);
+            }
+
+            // When player clicks, uses medkit
+            if (isDonutOut == true && Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                StartCoroutine(HealStanceTimer());
+                UseMedKit();
+
+                gameManager.staffSilhouette.SetActive(false);
+                gameManager.donutSilhouette.SetActive(true);
+                gameManager.ammoCount.SetActive(true);
+                gameManager.medKitCount.SetActive(false);
+            }
+
+
+
+            if (playerPlane.Raycast(ray, out hitDist))
             {
                 Vector3 targetPoint = ray.GetPoint(hitDist);
                 Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
@@ -142,7 +182,7 @@ public class PlayerController : MonoBehaviour
             }
             BossDps = BossObject.GetComponent<BossScript>().bossdps;
         }
-        
+
     }
     // Part of player movement system
     void FixedUpdate()
@@ -170,21 +210,23 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
         }
     }
+
     //Kills player when hp = 0 //When Collecting MedicKit Heal 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("MedKit"))
+        if (other.CompareTag("MedKit") && medkitCount < maxMedkitCount)
         {
             Debug.Log("Collected MedKit");
             medkitCount += 1;
 
         }
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            int damage = Random.Range(15,20);
+            int damage = Random.Range(15, 20);
             Debug.Log("Collided with " + collision.gameObject.name);
             hP -= damage;
             healthBar.SetHealth(hP);
@@ -205,7 +247,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Collided with " + collision.gameObject.name);
             if (BossDps == true)
             {
-                int damage = Random.Range(25,30);
+                int damage = Random.Range(25, 30);
                 hP -= damage;
                 healthBar.SetHealth(hP);
 
@@ -219,7 +261,7 @@ public class PlayerController : MonoBehaviour
             }
             if (BossDps == false)
             {
-                int damage = Random.Range(20,25);
+                int damage = Random.Range(20, 25);
                 hP -= damage;
                 healthBar.SetHealth(hP);
 
@@ -246,6 +288,57 @@ public class PlayerController : MonoBehaviour
     {
         playerAudio.PlayOneShot(gunShootSound, 1.0f);
         shootParticle.Play();
+    }
+
+    //switches player stances
+    public void ShootStance()
+    {
+        shootStance.gameObject.SetActive(true);
+        idleStance.gameObject.SetActive(false);
+        healStance.gameObject.SetActive(false);
+        isGunOut = true;
+        isDonutOut = false;
+
+    }
+
+    public void IdleStance()
+    {
+        idleStance.gameObject.SetActive(true);
+        shootStance.gameObject.SetActive(false);
+        healStance.gameObject.SetActive(false);
+        isGunOut = true;
+        isDonutOut = false;
+    }
+
+    public void HealStance()
+    {
+        healStance.gameObject.SetActive(true);
+        shootStance.gameObject.SetActive(false);
+        idleStance.gameObject.SetActive(false);
+
+        isGunOut = false;
+        isDonutOut = true;
+        //StartCoroutine(HealStanceTimer());
+    }
+
+    public void UseMedKit()
+    {
+        medkitCount -= 1;
+        hP += 100;
+        playerAudio.PlayOneShot(healthKitSound, 0.5f);
+        healthBar.SetHealth(hP);
+        moveSpeed += speedBuff;
+        StartCoroutine(speedCooldown());
+
+        if (medkitCount < 0)
+        {
+            medkitCount = 0;
+        }
+    }
+
+    IEnumerator HealStanceTimer()
+    {
+        yield return new WaitForSeconds(healStanceTime);
     }
 }
 

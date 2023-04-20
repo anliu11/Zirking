@@ -34,7 +34,17 @@ public class GameManager : MonoBehaviour
     public bool waveDestroy = true;
     public GameObject waveDestroySound;
 
+    //Inventory UI
+    public GameObject inventoryUI;
+    public GameObject staffSilhouette;
+    public GameObject donutSilhouette;
+    public GameObject ammoCount;
+    public GameObject medKitCount;
+    public TextMeshProUGUI ammoCountText;
+    public TextMeshProUGUI medkitCountText;
 
+    public int medkitnum;
+    public int maxmedkitnum;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +65,9 @@ public class GameManager : MonoBehaviour
         enemyNum = spawnManager.GetComponent<SpawnManager>().enemyCount + spawnManager.GetComponent<SpawnManager>().bossCounter;
         enemyCount.text = "ENEMY COUNT- " + enemyNum.ToString();
 
-
+        medkitnum = player.GetComponent<PlayerController>().medkitCount;
+        maxmedkitnum = player.GetComponent<PlayerController>().maxMedkitCount;
+        medkitCountText.text = medkitnum.ToString() + "/" + maxmedkitnum.ToString();
 
         //Runs when the player dies.
         playerHP = player.GetComponent<PlayerController>().hP;
@@ -140,6 +152,11 @@ public class GameManager : MonoBehaviour
         returnButtonMain.gameObject.SetActive(false);
         playerHud.gameObject.SetActive(true);
         healthBar.SetActive(true);
+
+        inventoryUI.SetActive(true);
+        ammoCount.SetActive(true);
+        donutSilhouette.SetActive(true);
+
 
         cursorManeger.GetComponent<CursorManeger>().CrossHairCursor();
     }
