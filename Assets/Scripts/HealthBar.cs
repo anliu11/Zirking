@@ -12,19 +12,19 @@ public class HealthBar : MonoBehaviour
 
     public int bossHealth;
 
-    public GameObject boss;
+    public GameObject bossObject;
+    public BossScript boss;
     public TextMeshProUGUI healthNumber;
     
 
 
     private void Start()
     {
-
+       
     }
     private void Update()
     {
-        
-        
+       
     }
 
     //Set health bar to maximun health value
