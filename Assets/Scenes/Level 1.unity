@@ -22120,7 +22120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNum: 1
-  sceneDelayTime: 0.5
+  sceneDelayTime: 0.75
 --- !u!114 &2128563563
 MonoBehaviour:
   m_ObjectHideFlags: 0
