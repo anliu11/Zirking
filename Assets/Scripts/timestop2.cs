@@ -9,6 +9,7 @@ public class timestop2 : MonoBehaviour
     public float playeralv;
     public LayerMask player;
     public bool timezoned;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +24,12 @@ public class timestop2 : MonoBehaviour
         {
             if (Physics.CheckSphere(transform.position, sphereRadius, player))
             {
-            Debug.Log("zone");
-            timezoned = true;
+                Debug.Log("zone");
+                timezoned = true;
+            }
+            else
+            {
+                timezoned = false;
             }
         }
     }

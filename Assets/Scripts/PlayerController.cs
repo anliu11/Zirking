@@ -71,8 +71,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //timestop
-        Timestopped();
-
         if (hP <= 0)
         {
             moveSpeed = 0;
@@ -80,24 +78,7 @@ public class PlayerController : MonoBehaviour
 
         if (gameManager.GetComponent<GameManager>().isGameActive == true)
         {
-            // Makes the player look towards the camera
-            if (timezoned2 = true)
-            {
-
-            }
-            
-            Plane playerPlane = new Plane(Vector3.up, transform.position);
-            Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
-            float hitDist = 0.0f;
-            
-            if (playerPlane.Raycast(ray, out hitDist))
-            {
-                Vector3 targetPoint = ray.GetPoint(hitDist);
-                Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
-                targetRotation.x = 0;
-                targetRotation.z = 0;
-                playerObj.transform.rotation = Quaternion.Slerp(playerObj.transform.rotation, targetRotation, 7f * Time.deltaTime);
-            }
+            Timestopped();
             // When player presses 2 or F, brings out medkit
             if ((Input.GetKeyDown(KeyCode.Alpha2)) && medkitCount > 0)
             {
@@ -143,7 +124,6 @@ public class PlayerController : MonoBehaviour
             MovePlayer();
             Boundries();
 
-            GetComponent<GunShooting>().myInput();
             //GunEffects();
 
             /*
@@ -209,6 +189,21 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+    void turningsystem()
+    {
+        Plane playerPlane = new Plane(Vector3.up, transform.position);
+        Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
+        float hitDist = 0.0f;
+            
+        if (playerPlane.Raycast(ray, out hitDist))
+        {
+            Vector3 targetPoint = ray.GetPoint(hitDist);
+            Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
+            targetRotation.x = 0;
+            targetRotation.z = 0;
+            playerObj.transform.rotation = Quaternion.Slerp(playerObj.transform.rotation, targetRotation, 7f * Time.deltaTime);
+        }
+    }
     void Timestopped()
     {
         timezoned2 = spherebody.GetComponent<timestop2>().timezoned;
@@ -218,6 +213,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            turningsystem();
+            GetComponent<GunShooting>().myInput();
             moveSpeed = 5;
         }
     }
