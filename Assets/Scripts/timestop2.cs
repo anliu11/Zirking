@@ -9,6 +9,7 @@ public class timestop2 : MonoBehaviour
     public float playeralv;
     public LayerMask player;
     public bool timezoned;
+    public float fronzentime; 
     
 
     // Start is called before the first frame update
@@ -27,9 +28,14 @@ public class timestop2 : MonoBehaviour
                 Debug.Log("zone");
                 timezoned = true;
             }
-            else
+            if (timezoned == true)
             {
-                timezoned = false;
+                fronzentime += Time.deltaTime;
+                if (fronzentime > 3)
+                {
+                    timezoned = false;
+                    fronzentime = 0;
+                }
             }
         }
     }
