@@ -25,12 +25,20 @@ public class timestop : MonoBehaviour
         if (gameManager.GetComponent<GameManager>().isGameActive == true)
         {
             timezoned3 = spherebody.GetComponent<timestop2>().timezoned;
-            transform.localScale += (scaleChange * Time.deltaTime);
             lifespan += Time.deltaTime;
+            if (lifespan < 1)
+            {
+            transform.localScale += (scaleChange * Time.deltaTime);
+            }
+            
+            if (timezoned3 = true)
+            {}
+            /*
             if (lifespan > 1)
             {
                 Destroy(gameObject);
             }
+            */
         }
     }
 }
