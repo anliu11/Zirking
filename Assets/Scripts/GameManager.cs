@@ -46,6 +46,9 @@ public class GameManager : MonoBehaviour
     public int medkitnum;
     public int maxmedkitnum;
 
+    //Restart Scene Delay Num
+    public float RestartSceneDelayTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,7 +64,7 @@ public class GameManager : MonoBehaviour
     {
         //Updates the wave number by getting it from other script.
         wave = spawnManager.GetComponent<SpawnManager>().waveCount - 1;
-        waveNumber.text = "WAVE- " + wave.ToString() + " OF 10"; 
+        waveNumber.text = "WAVE- " + wave.ToString() + " OF 10";
         enemyNum = spawnManager.GetComponent<SpawnManager>().enemyCount + spawnManager.GetComponent<SpawnManager>().bossCounter;
         enemyCount.text = "ENEMY COUNT- " + enemyNum.ToString();
 
@@ -80,7 +83,7 @@ public class GameManager : MonoBehaviour
             //    gameManagerAudio.Stop();
             //    gameManagerAudio.clip = deathSound;
             //    gameManagerAudio.Play();
-                //gameManagerAudio.PlayOneShot(deathSound, 0.3f);
+            //gameManagerAudio.PlayOneShot(deathSound, 0.3f);
             //    deathInstance = true;
             //}
         }
@@ -94,8 +97,9 @@ public class GameManager : MonoBehaviour
         {
             waveDestroy = false;
             Instantiate(waveDestroySound, transform.position, Quaternion.identity);
+            playerHud.SetActive(false);
         }
-      
+
     }
 
     public void UpdateWave(int waveToAdd)
@@ -107,6 +111,7 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         isGameActive = false;
+        AllHudOff();
         winScreen.gameObject.SetActive(true);
         returnButtonWin.gameObject.SetActive(true);
         Debug.Log("Player has won");
@@ -119,6 +124,7 @@ public class GameManager : MonoBehaviour
     //Game over code.
     public void GameOver()
     {
+        AllHudOff();
         gameOverText.gameObject.SetActive(true);
         restartButtonLose.gameObject.SetActive(true);
         returnButtonLose.gameObject.SetActive(true);
@@ -131,7 +137,8 @@ public class GameManager : MonoBehaviour
     // Runs when the restart button is pressed.
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartCoroutine(restartSceneDelay());
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     // Runs when any of the starting buttons are pressed.
@@ -144,7 +151,7 @@ public class GameManager : MonoBehaviour
         waveNumber.text = "WAVE -" + wave.ToString() + " OF 10";
 
         enemyNum = spawnManager.GetComponent<SpawnManager>().enemyCount + spawnManager.GetComponent<SpawnManager>().bossCounter;
-        enemyCount.text = "ENEMY COUNT-" + enemyNum.ToString(); 
+        enemyCount.text = "ENEMY COUNT-" + enemyNum.ToString();
 
 
         player = GameObject.Find("Player");
@@ -173,5 +180,34 @@ public class GameManager : MonoBehaviour
         gameManagerAudio.Stop();
         gameManagerAudio.clip = bossDeathSound;
         gameManagerAudio.Play();
+    }
+
+    public void AllHudOff()
+    {
+        playerHud.SetActive(false);
+        inventoryUI.SetActive(false);
+        ammoCount.SetActive(false);
+        medKitCount.SetActive(false);
+        donutSilhouette.SetActive(false);
+        staffSilhouette.SetActive(false);
+
+    }
+
+    public void ALLHudOn()
+    {
+        playerHud.SetActive(true);
+        inventoryUI.SetActive(true);
+        ammoCount.SetActive(true);
+        medKitCount.SetActive(true);
+        donutSilhouette.SetActive(true);
+        staffSilhouette.SetActive(true);
+
+    }
+
+    IEnumerator restartSceneDelay()
+    {
+        yield return new WaitForSeconds(RestartSceneDelayTime);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 }

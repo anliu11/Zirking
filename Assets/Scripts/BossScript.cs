@@ -18,6 +18,8 @@ public class BossScript : MonoBehaviour
     public ParticleSystem damageParticle;
     public ParticleSystem chargeParticle;
 
+    public HealthBar healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,9 @@ public class BossScript : MonoBehaviour
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         bossdps = false;
         dashTrail = GetComponent<TrailRenderer>();
+
+        healthBar.SetMaxHealth(hitPoints);
+
     }
 
     // Update is called once per frame
@@ -48,6 +53,7 @@ public class BossScript : MonoBehaviour
         {
             Destroy(other.gameObject);
             hitPoints -= damage;
+            healthBar.SetHealth(hitPoints);
             damageParticle.Play();
             if (hitPoints <= 0)
             {

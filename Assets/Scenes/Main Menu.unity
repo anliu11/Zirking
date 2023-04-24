@@ -1028,6 +1028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNum: 2
+  sceneDelayTime: 0
 --- !u!114 &645457543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1684,7 +1685,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 19b12cac5269c4478b7f4cbf8b79f307, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f2c1f927bbc1244498bfbaf126badfdf, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1959,6 +1960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNum: 3
+  sceneDelayTime: 0
 --- !u!114 &1617757399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2246,6 +2248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNum: 1
+  sceneDelayTime: 0
 --- !u!1 &1714686327
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public int SceneNum;
+    public float sceneDelayTime;
 
     public void Play()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + SceneNum);
+        StartCoroutine(switchScenceDelay());
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + SceneNum);
     }
 
     // Start is called before the first frame update
@@ -23,5 +25,13 @@ public class MainMenu : MonoBehaviour
     void Update()
     {
         
+    }
+
+    //screen switch delay
+    IEnumerator switchScenceDelay()
+    {
+        yield return new WaitForSeconds(sceneDelayTime);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + SceneNum);
+
     }
 }
