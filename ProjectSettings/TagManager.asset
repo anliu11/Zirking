@@ -11,6 +11,7 @@ TagManager:
   - Boss
   - MedKit
   - Object
+  - Powerup
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
