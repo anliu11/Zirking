@@ -50,21 +50,21 @@ public class BossScript3 : MonoBehaviour
                 {
                     Instantiate(aura, generatesspawnpos(), aura.transform.rotation);
                     abilitytimer3 += Time.deltaTime;
-                    if (abilitytimer3 > 1)
+                    if (abilitytimer3 > 1.5f)
                     {
                     if (timezoned4 == true)
                     {
                         speed = 10;
                         abilitytimer2 = 0;
                         abilitytimer = -1;
-                        abilitytimer3 = 0
+                        abilitytimer3 = 0;
                     }   
                     else
                     {
                         speed = 5;
                         abilitytimer2 = 0;
                         abilitytimer = -1;
-                        abilitytimer3 = 0
+                        abilitytimer3 = 0;
                     }
                     }
                 }
