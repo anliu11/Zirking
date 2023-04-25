@@ -31,14 +31,14 @@ public class timestop : MonoBehaviour
             transform.localScale += (scaleChange * Time.deltaTime);
             }
             
-            if (timezoned3 = true)
-            {}
-            /*
             if (lifespan > 1)
             {
+                if (timezoned3 != true)
+                {
                 Destroy(gameObject);
+                }
             }
-            */
+        
         }
     }
 }

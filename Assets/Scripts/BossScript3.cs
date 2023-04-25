@@ -9,10 +9,13 @@ public class BossScript3 : MonoBehaviour
     
 
     public float abilitytimer;
+    public float abilitytimer2;
     public float speed;
     public int hitPoints;
+    public bool timezoned4;
     public GameObject player;
     public GameObject aura;
+    public GameObject spherebody;
     public GameManager gameManager;
     public ParticleSystem damageParticle;
 
@@ -22,6 +25,9 @@ public class BossScript3 : MonoBehaviour
         player = GameObject.Find("Player");
         BossRB = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        speed = 5;
+        timezoned3 = false;
+        spherebody =  GameObject.Find("Spherebody");
     }
 
     // Update is called once per frame
@@ -30,15 +36,30 @@ public class BossScript3 : MonoBehaviour
         if (gameManager.GetComponent<GameManager>().isGameActive == true)
         {
             //looks at the player
+            timezoned4 = spherebody.GetComponent<timestop2>().timezoned;
             this.transform.LookAt(player.transform);
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             playerhP = player.GetComponent<PlayerController>().hP;
             abilitytimer += Time.deltaTime;
-            if (abilitytimer > 8.0f)
+            if (abilitytimer > 6.0f)
             {
                 speed = 0;
-                abilitytimer = -2;
-                Instantiate(aura, generatesspawnpos(), aura.transform.rotation);
+                abilitytimer2 += Time.deltaTime;
+                if (abilitytimer2 > 2.0f)
+                {
+                    abilitytimer2 = 0;
+                    abilitytimer = -1;
+                    Instantiate(aura, generatesspawnpos(), aura.transform.rotation);
+                    if (timezoned4 = true)
+                    {
+                        speed = 10;
+                    }
+                    else
+                    {
+                        speed = 5;
+                    }
+                }
+
             }
         }
 
