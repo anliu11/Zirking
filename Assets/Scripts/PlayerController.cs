@@ -215,7 +215,10 @@ public class PlayerController : MonoBehaviour
         {
             turningsystem();
             GetComponent<GunShooting>().myInput();
-            moveSpeed = 5;
+            if (moveSpeed <= 0)
+            {
+                moveSpeed = 5;
+            }
         }
     }
     private void OnCollisionEnter(Collision collision)
