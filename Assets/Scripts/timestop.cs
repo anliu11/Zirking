@@ -28,7 +28,7 @@ public class timestop : MonoBehaviour
             lifespan += Time.deltaTime;
             if (lifespan < 1)
             {
-            transform.localScale += (scaleChange * Time.deltaTime);
+                transform.localScale += (scaleChange * Time.deltaTime);
             }
             
             if (lifespan > 1)
