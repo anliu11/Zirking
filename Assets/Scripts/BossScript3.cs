@@ -10,6 +10,7 @@ public class BossScript3 : MonoBehaviour
 
     public float abilitytimer;
     public float abilitytimer2;
+    public float abilitytimer3;
     public float speed;
     public int hitPoints;
     public bool timezoned4;
@@ -26,7 +27,7 @@ public class BossScript3 : MonoBehaviour
         BossRB = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         speed = 5;
-        timezoned3 = false;
+        timezoned4 = false;
         spherebody =  GameObject.Find("Spherebody");
     }
 
@@ -47,16 +48,24 @@ public class BossScript3 : MonoBehaviour
                 abilitytimer2 += Time.deltaTime;
                 if (abilitytimer2 > 2.0f)
                 {
-                    abilitytimer2 = 0;
-                    abilitytimer = -1;
                     Instantiate(aura, generatesspawnpos(), aura.transform.rotation);
-                    if (timezoned4 = true)
+                    abilitytimer3 += Time.deltaTime;
+                    if (abilitytimer3 > 1)
+                    {
+                    if (timezoned4 == true)
                     {
                         speed = 10;
-                    }
+                        abilitytimer2 = 0;
+                        abilitytimer = -1;
+                        abilitytimer3 = 0
+                    }   
                     else
                     {
                         speed = 5;
+                        abilitytimer2 = 0;
+                        abilitytimer = -1;
+                        abilitytimer3 = 0
+                    }
                     }
                 }
 
