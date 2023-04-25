@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip gunShootSound;
     public AudioClip healthKitSound;
     public AudioClip bonk;
+    public AudioClip pickUpSound;
 
     //for timestop (boss3)
     public GameObject spherebody;
@@ -186,6 +187,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Collected MedKit");
             medkitCount += 1;
+            playerAudio.PlayOneShot(pickUpSound, 1f);
 
         }
     }
@@ -215,7 +217,10 @@ public class PlayerController : MonoBehaviour
         {
             turningsystem();
             GetComponent<GunShooting>().myInput();
-            moveSpeed = 5;
+            if (moveSpeed <= 0)
+            {
+                moveSpeed = 5;
+            }
         }
     }
     private void OnCollisionEnter(Collision collision)
