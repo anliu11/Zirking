@@ -52,8 +52,8 @@ public class BossScript : MonoBehaviour
         if (other.gameObject.CompareTag("Projectile"))
         {
             Destroy(other.gameObject);
-            hitPoints -= damage;
             healthBar.SetHealth(hitPoints);
+            hitPoints -= damage;
             damageParticle.Play();
             if (hitPoints <= 0)
             {

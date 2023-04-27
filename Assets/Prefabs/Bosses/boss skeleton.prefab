@@ -182,6 +182,7 @@ MonoBehaviour:
   spawnManager: {fileID: 0}
   damageParticle: {fileID: 2903684786700679065}
   abilityParticle: {fileID: 8977316152641113360}
+  healthBar: {fileID: 0}
 --- !u!1 &5546603867992332464
 GameObject:
   m_ObjectHideFlags: 0
