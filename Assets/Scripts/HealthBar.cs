@@ -10,11 +10,7 @@ public class HealthBar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
-    public int bossHealth;
-
-    public GameObject bossObject;
-    public BossScript boss;
-    public TextMeshProUGUI healthNumber;
+    
     
 
 
