@@ -93,7 +93,7 @@ MonoBehaviour:
   aura: {fileID: 5366167999635233007, guid: 2f2c56fb1db2c4dac96b91a531471ca7, type: 3}
   spherebody: {fileID: 0}
   gameManager: {fileID: 0}
-  damageParticle: {fileID: 0}
+  damageParticle: {fileID: 4717233766812182233, guid: 2b7194f89e01c46a8838464d3fa5a2b0, type: 3}
 --- !u!1 &2461262959093299650
 GameObject:
   m_ObjectHideFlags: 0
