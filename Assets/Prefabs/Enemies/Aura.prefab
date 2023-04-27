@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  scaleChange: {x: 20, y: 20, z: 20}
+  scaleChange: {x: 60, y: 20, z: 60}
   player:
     serializedVersion: 2
     m_Bits: 0

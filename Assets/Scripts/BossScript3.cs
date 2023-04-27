@@ -11,6 +11,7 @@ public class BossScript3 : MonoBehaviour
     public float abilitytimer;
     public float abilitytimer2;
     public float abilitytimer3;
+    public float speedtimer;
     public float speed;
     public int hitPoints;
     public bool timezoned4;
@@ -19,6 +20,7 @@ public class BossScript3 : MonoBehaviour
     public GameObject spherebody;
     public GameManager gameManager;
     public ParticleSystem damageParticle;
+    private float basespeed = 5.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,9 +28,10 @@ public class BossScript3 : MonoBehaviour
         player = GameObject.Find("Player");
         BossRB = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        speed = 5;
+        speed = basespeed;
         timezoned4 = false;
         spherebody =  GameObject.Find("Spherebody");
+        hitPoints = 2000;
     }
 
     // Update is called once per frame
@@ -46,32 +49,46 @@ public class BossScript3 : MonoBehaviour
             {
                 speed = 0;
                 abilitytimer2 += Time.deltaTime;
-                if (abilitytimer2 > 2.0f)
+                if (abilitytimer2 > 0.25f)
                 {
                     Instantiate(aura, generatesspawnpos(), aura.transform.rotation);
+                    abilitytimer2 = -1000;
+                }
+                if (abilitytimer2 < 0)
+                {
                     abilitytimer3 += Time.deltaTime;
-                    if (abilitytimer3 > 1.5f)
-                    {
+                }
+                if (abilitytimer3 > 1.5f)
+                {
                     if (timezoned4 == true)
                     {
-                        speed = 10;
-                        abilitytimer2 = 0;
-                        abilitytimer = -1;
-                        abilitytimer3 = 0;
+                        speed = 3;
+                        timerreset();
                     }   
                     else
                     {
-                        speed = 5;
-                        abilitytimer2 = 0;
-                        abilitytimer = -1;
-                        abilitytimer3 = 0;
+                        speed = basespeed;
+                        timerreset();
                     }
-                    }
+                } 
+            }
+            if (speed == 3)
+            {
+                speedtimer += Time.deltaTime;
+                if (speedtimer > 2)
+                {
+                    speed = basespeed;
+                    speedtimer = 0;
                 }
-
             }
         }
 
+    }
+    void timerreset()
+    {
+        abilitytimer2 = 0;
+        abilitytimer = 0;
+        abilitytimer3 = 0;
     }
     Vector3 generatesspawnpos()
     {

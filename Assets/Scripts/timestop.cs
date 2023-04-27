@@ -26,12 +26,12 @@ public class timestop : MonoBehaviour
         {
             timezoned3 = spherebody.GetComponent<timestop2>().timezoned;
             lifespan += Time.deltaTime;
-            if (lifespan < 1)
+            if (lifespan < 0.5)
             {
                 transform.localScale += (scaleChange * Time.deltaTime);
             }
             
-            if (lifespan > 1)
+            if (lifespan > 0.5)
             {
                 if (timezoned3 != true)
                 {
