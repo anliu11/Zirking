@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438879922640990033}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.02, y: 0, z: 0.08}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -83,10 +83,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilitytimer: 0
+  abilitytimer2: 0
+  abilitytimer3: 0
+  speedtimer: 0
   speed: 0
   hitPoints: 0
+  timezoned4: 0
   player: {fileID: 0}
   aura: {fileID: 5366167999635233007, guid: 2f2c56fb1db2c4dac96b91a531471ca7, type: 3}
+  spherebody: {fileID: 0}
   gameManager: {fileID: 0}
   damageParticle: {fileID: 0}
 --- !u!1 &2461262959093299650

@@ -9745,7 +9745,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4242452295651010834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6.52}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9811,6 +9811,7 @@ MonoBehaviour:
   bossdps: 0
   damageParticle: {fileID: 7171841672093939967}
   chargeParticle: {fileID: 6469354921092981544}
+  healthBar: {fileID: 0}
 --- !u!96 &8049554
 TrailRenderer:
   serializedVersion: 2
