@@ -25,6 +25,8 @@ public class BossScript2 : MonoBehaviour
     public ParticleSystem damageParticle;
     public ParticleSystem abilityParticle;
 
+    public HealthBar healthBar;
+
 
     private float spawnMinX = -15;
     private float spawnMaxX = 17;
@@ -71,8 +73,10 @@ public class BossScript2 : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
         BossRB = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        healthBar.SetMaxHealth(hitPoints);
         /* //Getting the minion speed.
         minionspeed = gameObject.GetComponent<Enemy2>().speed;
         */
@@ -137,10 +141,12 @@ public class BossScript2 : MonoBehaviour
         if (other.gameObject.CompareTag("Projectile"))
         {
             Destroy(other.gameObject);
+            healthBar.SetHealth(hitPoints);
             hitPoints -= damage;
             damageParticle.Play();
             if (hitPoints <= 0)
             {
+                
                 Destroy(gameObject);
             }
         }

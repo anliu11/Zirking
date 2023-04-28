@@ -30,6 +30,8 @@ public class BossScript : MonoBehaviour
         bossdps = false;
         dashTrail = GetComponent<TrailRenderer>();
 
+        healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
+
         healthBar.SetMaxHealth(hitPoints);
 
     }
@@ -52,8 +54,8 @@ public class BossScript : MonoBehaviour
         if (other.gameObject.CompareTag("Projectile"))
         {
             Destroy(other.gameObject);
-            hitPoints -= damage;
             healthBar.SetHealth(hitPoints);
+            hitPoints -= damage;
             damageParticle.Play();
             if (hitPoints <= 0)
             {

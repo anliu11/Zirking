@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     public int hP;
     private int maxHP = 100;
 
-    public HealthBar healthBar;
+    
     public GameManager gameManager;
     public GameObject BossObject;
     public bool BossDps;
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
         playerAudio = GetComponent<AudioSource>();
         hP = maxHP;
-        healthBar.SetMaxHealth(maxHP);
+        
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         BossObject = GameObject.Find("Boss Zombie");
 
@@ -230,7 +230,6 @@ public class PlayerController : MonoBehaviour
             int damage = Random.Range(15, 20);
             Debug.Log("Collided with " + collision.gameObject.name);
             hP -= damage;
-            healthBar.SetHealth(hP);
             Rigidbody enemyRigidBody = collision.gameObject.GetComponent<Rigidbody>();
             Vector3 awayyFromPlayer = collision.gameObject.transform.position - transform.position;
             enemyRigidBody.AddForce(awayyFromPlayer * 5, ForceMode.Impulse);
@@ -239,6 +238,7 @@ public class PlayerController : MonoBehaviour
 
             if (hP <= 0)
             {
+                hP = 0;
                 gameManager.PlayDeathSound();
                 gameObject.SetActive(false);
             }
@@ -250,12 +250,12 @@ public class PlayerController : MonoBehaviour
             {
                 int damage = Random.Range(25, 30);
                 hP -= damage;
-                healthBar.SetHealth(hP);
 
                 playerAudio.PlayOneShot(bonk, 0.8f);
 
                 if (hP <= 0)
                 {
+                    hP = 0;
                     gameManager.PlayBossDeathSound();
                     gameObject.SetActive(false);
                 }
@@ -264,13 +264,13 @@ public class PlayerController : MonoBehaviour
             {
                 int damage = Random.Range(20, 25);
                 hP -= damage;
-                healthBar.SetHealth(hP);
 
                 playerAudio.PlayOneShot(bonk, 0.8f);
 
 
                 if (hP <= 0)
                 {
+                    hP = 0;
                     gameManager.PlayBossDeathSound();
                     gameObject.SetActive(false);
                 }
@@ -327,7 +327,6 @@ public class PlayerController : MonoBehaviour
         medkitCount -= 1;
         hP += 100;
         playerAudio.PlayOneShot(healthKitSound, 0.5f);
-        healthBar.SetHealth(hP);
         moveSpeed += speedBuff;
         StartCoroutine(speedCooldown());
 

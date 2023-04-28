@@ -34,6 +34,13 @@ public class GameManager : MonoBehaviour
     public bool waveDestroy = true;
     public GameObject waveDestroySound;
 
+    public int bossCount;
+
+    //Health UI
+    [SerializeField] private CanvasGroup HealthBarGroup;
+    public bool FadeInHP = true;
+    public bool FadeOutHP = true;
+
     //Inventory UI
     public GameObject inventoryUI;
     public GameObject staffSilhouette;
@@ -52,6 +59,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        HealthBarGroup.alpha = 0;
         gameManagerAudio = GetComponent<AudioSource>();
         cursorManeger = GameObject.Find("Cursor Maneger");
 
@@ -67,6 +75,8 @@ public class GameManager : MonoBehaviour
         waveNumber.text = "WAVE- " + wave.ToString() + " OF 10";
         enemyNum = spawnManager.GetComponent<SpawnManager>().enemyCount + spawnManager.GetComponent<SpawnManager>().bossCounter;
         enemyCount.text = "ENEMY COUNT- " + enemyNum.ToString();
+
+        bossCount = GameObject.FindGameObjectsWithTag("Boss").Length;
 
         medkitnum = player.GetComponent<PlayerController>().medkitCount;
         maxmedkitnum = player.GetComponent<PlayerController>().maxMedkitCount;
@@ -95,11 +105,29 @@ public class GameManager : MonoBehaviour
         }
         if (wave == 10 && waveDestroy == true)
         {
+
             waveDestroy = false;
             Instantiate(waveDestroySound, transform.position, Quaternion.identity);
             playerHud.SetActive(false);
         }
+        if (bossCount == 1)
+        {
+            if (FadeInHP == true)
+            {
+                HealthBarGroup.alpha += Time.deltaTime;
 
+                if (HealthBarGroup.alpha >= 1)
+                {
+                    FadeInHP = false;
+                    bossCount = 0;
+
+                }
+            }
+        }
+        if (bossCount == 0)
+        {
+                HealthBarGroup.alpha -= Time.deltaTime;
+        }
     }
 
     public void UpdateWave(int waveToAdd)
@@ -158,7 +186,6 @@ public class GameManager : MonoBehaviour
         titleScreen.gameObject.SetActive(false);
         returnButtonMain.gameObject.SetActive(false);
         playerHud.gameObject.SetActive(true);
-        healthBar.SetActive(true);
 
         inventoryUI.SetActive(true);
         ammoCount.SetActive(true);
