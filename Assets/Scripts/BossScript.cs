@@ -30,6 +30,8 @@ public class BossScript : MonoBehaviour
         bossdps = false;
         dashTrail = GetComponent<TrailRenderer>();
 
+        healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
+
         healthBar.SetMaxHealth(hitPoints);
 
     }

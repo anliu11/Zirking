@@ -238,6 +238,7 @@ public class PlayerController : MonoBehaviour
 
             if (hP <= 0)
             {
+                hP = 0;
                 gameManager.PlayDeathSound();
                 gameObject.SetActive(false);
             }
@@ -254,6 +255,7 @@ public class PlayerController : MonoBehaviour
 
                 if (hP <= 0)
                 {
+                    hP = 0;
                     gameManager.PlayBossDeathSound();
                     gameObject.SetActive(false);
                 }
@@ -268,6 +270,7 @@ public class PlayerController : MonoBehaviour
 
                 if (hP <= 0)
                 {
+                    hP = 0;
                     gameManager.PlayBossDeathSound();
                     gameObject.SetActive(false);
                 }

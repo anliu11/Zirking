@@ -1037,6 +1037,7 @@ MonoBehaviour:
   bossDeathSound: {fileID: 8300000, guid: d2de7ad830dce4b0292dee01765602ed, type: 3}
   waveDestroy: 1
   waveDestroySound: {fileID: 4265353656356279640, guid: 4ef1061c2d2704c968de3c18f3a4c56c, type: 3}
+  HealthBarGroup: {fileID: 1776122903}
   inventoryUI: {fileID: 1288664191}
   staffSilhouette: {fileID: 1283789413}
   donutSilhouette: {fileID: 1390782893}
@@ -16273,13 +16274,14 @@ GameObject:
   - component: {fileID: 1776122900}
   - component: {fileID: 1776122902}
   - component: {fileID: 1776122901}
+  - component: {fileID: 1776122903}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1776122900
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16397,6 +16399,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!225 &1776122903
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776122899}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1778302431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18313,7 +18327,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -0.5773926, y: -1.4633999}
   m_SizeDelta: {x: -18.718, y: 2.9268}
   m_Pivot: {x: 0.5, y: 0.5}

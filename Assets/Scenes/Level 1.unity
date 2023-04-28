@@ -853,6 +853,7 @@ MonoBehaviour:
   bossDeathSound: {fileID: 8300000, guid: d2de7ad830dce4b0292dee01765602ed, type: 3}
   waveDestroy: 1
   waveDestroySound: {fileID: 4265353656356279640, guid: 4ef1061c2d2704c968de3c18f3a4c56c, type: 3}
+  HealthBarGroup: {fileID: 855197299}
   inventoryUI: {fileID: 1892704406}
   staffSilhouette: {fileID: 1649893232}
   donutSilhouette: {fileID: 1304456896}
@@ -9395,13 +9396,14 @@ GameObject:
   - component: {fileID: 855197296}
   - component: {fileID: 855197298}
   - component: {fileID: 855197297}
+  - component: {fileID: 855197299}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &855197296
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9519,6 +9521,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!225 &855197299
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855197295}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1001 &871851543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17461,67 +17475,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607188880}
   m_CullTransparentMesh: 1
---- !u!1001 &1609112349
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3579208651881182120, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3579208651881182120, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.8459466
-      objectReference: {fileID: 0}
-    - target: {fileID: 3579208651881182120, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0001001358
-      objectReference: {fileID: 0}
-    - target: {fileID: 3579208651881182120, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.8895113
-      objectReference: {fileID: 0}
-    - target: {fileID: 3579208651881182120, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3579208651881182120, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3579208651881182120, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3579208651881182120, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3579208651881182120, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3579208651881182120, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3579208651881182120, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3900502326738981957, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 855197297}
-    - target: {fileID: 4242452295651010834, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
-      propertyPath: m_Name
-      value: Boss Zombie
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
 --- !u!4 &1614354362 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4353972167979376, guid: 9616a1448d86e48e9aa6af7376facab7, type: 3}
@@ -21266,7 +21219,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -0.5773926, y: -1.4633999}
   m_SizeDelta: {x: -18.718, y: 2.9268}
   m_Pivot: {x: 0.5, y: 0.5}
