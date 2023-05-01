@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
     IEnumerator staggeredUnit()
     {
         yield return new WaitForSeconds(0.1f);
-        speed = 3;
+        speed = 5;
     }
     IEnumerator waitUntilDestroy()
     {
