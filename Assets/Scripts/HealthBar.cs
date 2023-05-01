@@ -10,6 +10,8 @@ public class HealthBar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
+    public TextMeshProUGUI bossHealthNumber;
+
 
 
     private void Start()
@@ -24,6 +26,7 @@ public class HealthBar : MonoBehaviour
     //Set health bar to maximun health value
     public void SetMaxHealth(int health)
     {
+        bossHealthNumber.text = health.ToString() + " /2000";
         slider.maxValue = health;
         slider.value = health;
 
@@ -33,6 +36,7 @@ public class HealthBar : MonoBehaviour
     //Set health bar to health value
     public void SetHealth(int health)
     {
+        bossHealthNumber.text = health.ToString() + " /2000";
         slider.value = health;
      
         fill.color = gradient.Evaluate(slider.normalizedValue);
