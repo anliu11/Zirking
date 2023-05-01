@@ -4431,14 +4431,14 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294904576
-  m_fontColor: {r: 0, g: 0.043137256, b: 1, a: 1}
+    rgba: 4279828735
+  m_fontColor: {r: 1, g: 0, b: 0.09803922, a: 1}
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 0, g: 0, b: 0, a: 1}
-    topRight: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 0.6431373, g: 0.6431373, b: 0.6431373, a: 1}
+    bottomLeft: {r: 1, g: 0.9098039, b: 0.9098039, a: 1}
     bottomRight: {r: 0, g: 0, b: 0, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
