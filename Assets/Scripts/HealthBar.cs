@@ -10,8 +10,6 @@ public class HealthBar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
-    
-    
 
 
     private void Start()

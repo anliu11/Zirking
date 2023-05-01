@@ -73,6 +73,7 @@ public class BossScript2 : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
         BossRB = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         healthBar.SetMaxHealth(hitPoints);
@@ -145,6 +146,7 @@ public class BossScript2 : MonoBehaviour
             damageParticle.Play();
             if (hitPoints <= 0)
             {
+                
                 Destroy(gameObject);
             }
         }
