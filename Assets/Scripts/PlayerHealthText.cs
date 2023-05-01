@@ -16,6 +16,6 @@ public class PlayerHealthText : MonoBehaviour
     private void Update()
     {
         playerHP = GameObject.Find("Player").GetComponent<PlayerController>().hP;
-        healthNumber.text = playerHP.ToString() + " /100";
+        healthNumber.text = playerHP.ToString();
     }
 }

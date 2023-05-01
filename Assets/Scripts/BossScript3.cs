@@ -22,16 +22,20 @@ public class BossScript3 : MonoBehaviour
     public ParticleSystem damageParticle;
     private float basespeed = 5.0f;
 
+    public HealthBar healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
+        healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
         BossRB = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         speed = basespeed;
         timezoned4 = false;
         spherebody =  GameObject.Find("Spherebody");
         hitPoints = 2000;
+        healthBar.SetMaxHealth(hitPoints);
     }
 
     // Update is called once per frame
@@ -104,6 +108,7 @@ public class BossScript3 : MonoBehaviour
         {
             Destroy(other.gameObject);
             hitPoints -= damage;
+            healthBar.SetHealth(hitPoints);
             damageParticle.Play();
             if (hitPoints <= 0)
             {
