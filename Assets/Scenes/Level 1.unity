@@ -853,7 +853,10 @@ MonoBehaviour:
   bossDeathSound: {fileID: 8300000, guid: d2de7ad830dce4b0292dee01765602ed, type: 3}
   waveDestroy: 1
   waveDestroySound: {fileID: 4265353656356279640, guid: 4ef1061c2d2704c968de3c18f3a4c56c, type: 3}
+  bossCount: 0
   HealthBarGroup: {fileID: 855197299}
+  FadeInHP: 1
+  FadeOutHP: 1
   inventoryUI: {fileID: 1892704406}
   staffSilhouette: {fileID: 1649893232}
   donutSilhouette: {fileID: 1304456896}
@@ -5879,6 +5882,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 97d6c9c29e706443f93650636328bd79, type: 3}
       propertyPath: m_Name
       value: Jason Amogus Blender
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865064391339405807, guid: 97d6c9c29e706443f93650636328bd79, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97d6c9c29e706443f93650636328bd79, type: 3}
