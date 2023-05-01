@@ -5847,7 +5847,6 @@ MonoBehaviour:
   medkitCount: 0
   maxMedkitCount: 0
   hP: 0
-  healthBar: {fileID: 0}
   gameManager: {fileID: 0}
   BossObject: {fileID: 0}
   BossDps: 0
@@ -6098,8 +6097,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50721528b63f247738abd9f44573ebe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8248806696218223792, guid: 292f2f883a3874f468195c2f14c5085f, type: 3}
-  bossPrefab: {fileID: 4242452295651010834, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
+  enemyPrefab: {fileID: 7745120182769367811, guid: ddb5a1350e3d64e948a2b9975a91905d, type: 3}
+  bossPrefab: {fileID: 1438879922640990033, guid: ea4c9e4319fd441efa7d7492d84aae33, type: 3}
   medpackPrefab: {fileID: 7526967293586801235, guid: 44374bab5a6a54e08bdb99671e8ea026, type: 3}
   delay: 0
   waveCount: 1
@@ -15580,10 +15579,6 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 564653773}
-  bossHealth: 0
-  bossObject: {fileID: 0}
-  boss: {fileID: 0}
-  healthNumber: {fileID: 0}
 --- !u!114 &1175481804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20362,7 +20357,6 @@ MonoBehaviour:
   medkitCount: 0
   maxMedkitCount: 3
   hP: 0
-  healthBar: {fileID: 1175481803}
   gameManager: {fileID: 97922863}
   BossObject: {fileID: 0}
   BossDps: 0
