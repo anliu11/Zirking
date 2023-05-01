@@ -2384,8 +2384,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "DONUT HEALS PLAYER\n\nHOLD UP TO 3 DONUTS\n\nMOVING DIAGONALY IS FASTER\n\nYOU
-    CAN SHOOT \nTHROUGH OBJECTS"
+  m_text: "DONUT HEALS PLAYER\nAND GIVES SPEED BOOST\n\nHOLD UP TO 3 DONUTS\n\nMOVING
+    DIAGONALY IS FASTER\n\nYOU CAN SHOOT \nTHROUGH OBJECTS"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8e97aefa066ae49e6b49a885ed222321, type: 2}
   m_sharedMaterial: {fileID: 3034478000208239505, guid: 8e97aefa066ae49e6b49a885ed222321, type: 2}
