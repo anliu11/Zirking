@@ -1034,7 +1034,7 @@ MonoBehaviour:
   isGameActive: 0
   winWaveNum: 10
   deathSound: {fileID: 8300000, guid: c1b37498e5dee49689d8ac88b6b53465, type: 3}
-  bossDeathSound: {fileID: 8300000, guid: d2de7ad830dce4b0292dee01765602ed, type: 3}
+  bossDeathSound: {fileID: 8300000, guid: c1b37498e5dee49689d8ac88b6b53465, type: 3}
   waveDestroy: 1
   waveDestroySound: {fileID: 4265353656356279640, guid: 4ef1061c2d2704c968de3c18f3a4c56c, type: 3}
   bossCount: 0

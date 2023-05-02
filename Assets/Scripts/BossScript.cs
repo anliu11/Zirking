@@ -24,13 +24,12 @@ public class BossScript : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
         BossRB = GetComponent<Rigidbody>();
         InvokeRepeating("Ability", 4, 6);
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         bossdps = false;
         dashTrail = GetComponent<TrailRenderer>();
-
-        healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
 
         healthBar.SetMaxHealth(hitPoints);
 
