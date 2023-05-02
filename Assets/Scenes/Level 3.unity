@@ -1415,7 +1415,7 @@ MonoBehaviour:
   returnButtonWin: {fileID: 2008213318}
   titleScreen: {fileID: 1477039448}
   playerHud: {fileID: 1573472759}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1176406453}
   winScreen: {fileID: 1370537572}
   isGameActive: 0
   winWaveNum: 10
@@ -1424,7 +1424,7 @@ MonoBehaviour:
   waveDestroy: 1
   waveDestroySound: {fileID: 4265353656356279640, guid: 4ef1061c2d2704c968de3c18f3a4c56c, type: 3}
   bossCount: 0
-  HealthBarGroup: {fileID: 0}
+  HealthBarGroup: {fileID: 1176406455}
   FadeInHP: 1
   FadeOutHP: 1
   inventoryUI: {fileID: 398710441}
