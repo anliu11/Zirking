@@ -1437,6 +1437,7 @@ MonoBehaviour:
   medkitnum: 0
   maxmedkitnum: 0
   RestartSceneDelayTime: 0.5
+  healthHUD: {fileID: 2131047389}
 --- !u!4 &97922864
 Transform:
   m_ObjectHideFlags: 0
@@ -28235,7 +28236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2131047390
 RectTransform:
   m_ObjectHideFlags: 0

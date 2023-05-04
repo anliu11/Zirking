@@ -56,6 +56,9 @@ public class GameManager : MonoBehaviour
     //Restart Scene Delay Num
     public float RestartSceneDelayTime;
 
+    //player health HUD
+    public GameObject healthHUD;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -140,6 +143,7 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = false;
         AllHudOff();
+        healthHUD.gameObject.SetActive(false);
         winScreen.gameObject.SetActive(true);
         returnButtonWin.gameObject.SetActive(true);
         Debug.Log("Player has won");
@@ -157,6 +161,7 @@ public class GameManager : MonoBehaviour
         restartButtonLose.gameObject.SetActive(true);
         returnButtonLose.gameObject.SetActive(true);
         isGameActive = false;
+        healthHUD.gameObject.SetActive(false);
         Debug.Log("Player Died");
         cursorManeger.GetComponent<CursorManeger>().PointerCursor();
 
@@ -186,6 +191,8 @@ public class GameManager : MonoBehaviour
         titleScreen.gameObject.SetActive(false);
         returnButtonMain.gameObject.SetActive(false);
         playerHud.gameObject.SetActive(true);
+
+        healthHUD.gameObject.SetActive(true);
 
         inventoryUI.SetActive(true);
         ammoCount.SetActive(true);
