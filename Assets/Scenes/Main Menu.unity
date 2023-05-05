@@ -1593,6 +1593,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1776537012}
+        m_TargetAssemblyTypeName: BGmenuMusic, Assembly-CSharp
+        m_MethodName: PlayTipsMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &341399650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4451,6 +4463,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1776537012}
+        m_TargetAssemblyTypeName: BGmenuMusic, Assembly-CSharp
+        m_MethodName: PlayMenuMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1290005955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5849,6 +5873,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1776537011}
   - component: {fileID: 1776537010}
+  - component: {fileID: 1776537012}
   m_Layer: 0
   m_Name: Background Sound
   m_TagString: Untagged
@@ -5968,6 +5993,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1776537012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776537008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27437858a677a4ff482b1465f1de1048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuMusic: {fileID: 8300000, guid: a89cf4cae1a3745df8520f9ddff8df30, type: 3}
+  tipsMusic: {fileID: 8300000, guid: de92ca8984448450d9d0ebdbce9a5d6b, type: 3}
 --- !u!1 &1778065511
 GameObject:
   m_ObjectHideFlags: 0
@@ -6620,6 +6659,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1249479907}
         m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1776537012}
+        m_TargetAssemblyTypeName: BGmenuMusic, Assembly-CSharp
+        m_MethodName: PlayMenuMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
