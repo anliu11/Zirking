@@ -66,7 +66,7 @@ public class BossScript3 : MonoBehaviour
                 {
                     if (timezoned4 == true)
                     {
-                        speed = 4;
+                        speed = 5;
                         timerreset();
                     }   
                     else
