@@ -1289,7 +1289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorTexture: {fileID: 2800000, guid: 8c89ed5746a4faa48bb97701cc2f2e35, type: 3}
-  pointerCursor: {fileID: 2800000, guid: cace5f6bac8304c3da7f77a392748cf2, type: 3}
+  pointerCursor: {fileID: 2800000, guid: f966e1228956e42a9beccb74ad4d400b, type: 3}
 --- !u!4 &2039793689
 Transform:
   m_ObjectHideFlags: 0
