@@ -34,7 +34,7 @@ public class BossScript3 : MonoBehaviour
         speed = basespeed;
         timezoned4 = false;
         spherebody =  GameObject.Find("Spherebody");
-        hitPoints = 2000;
+        hitPoints = 4000;
         healthBar.SetMaxHealth(hitPoints);
     }
 
@@ -66,7 +66,7 @@ public class BossScript3 : MonoBehaviour
                 {
                     if (timezoned4 == true)
                     {
-                        speed = 3;
+                        speed = 4;
                         timerreset();
                     }   
                     else
