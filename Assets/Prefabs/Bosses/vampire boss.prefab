@@ -89,7 +89,7 @@ MonoBehaviour:
   abilitytimer3: 0
   speedtimer: 0
   speed: 0
-  hitPoints: 0
+  hitPoints: 4000
   timezoned4: 0
   player: {fileID: 0}
   aura: {fileID: 5366167999635233007, guid: 2f2c56fb1db2c4dac96b91a531471ca7, type: 3}
