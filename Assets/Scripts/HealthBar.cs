@@ -26,7 +26,7 @@ public class HealthBar : MonoBehaviour
     //Set health bar to maximun health value
     public void SetMaxHealth(int health)
     {
-        bossHealthNumber.text = health.ToString() + " /2000";
+        bossHealthNumber.text = health.ToString() + " /4000";
         slider.maxValue = health;
         slider.value = health;
 
@@ -36,7 +36,7 @@ public class HealthBar : MonoBehaviour
     //Set health bar to health value
     public void SetHealth(int health)
     {
-        bossHealthNumber.text = health.ToString() + " /2000";
+        bossHealthNumber.text = health.ToString() + " /4000";
         slider.value = health;
      
         fill.color = gradient.Evaluate(slider.normalizedValue);
