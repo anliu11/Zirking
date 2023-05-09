@@ -64,11 +64,14 @@ public class BossScript : MonoBehaviour
     }
     void Ability()
     {
-        speed = 0;
-        chargeParticle.Play();
-        dashTrail.enabled = true;
-        StartCoroutine(BuildUp());
-        StartCoroutine(AbilityTimer());
+        if (gameManager.GetComponent<GameManager>().isGameActive == true)
+        {
+            speed = 0;
+            chargeParticle.Play();
+            dashTrail.enabled = true;
+            StartCoroutine(BuildUp());
+            StartCoroutine(AbilityTimer());
+        }
     }
     IEnumerator BuildUp()
     {

@@ -4893,7 +4893,7 @@ MonoBehaviour:
   bossPrefab: {fileID: 4242452295651010834, guid: 0e24caed7e3e6470590c7fac36fc2c3e, type: 3}
   medpackPrefab: {fileID: 3234095999662694036, guid: 11573369437d746b18de5af3ea17f7ec, type: 3}
   delay: 0
-  waveCount: 1
+  waveCount: 10
   bossCount: 1
   bossCounter: 0
   totalEnimies: 0
