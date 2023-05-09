@@ -114,7 +114,7 @@ public class BossScript2 : MonoBehaviour
                     if (bossabilitywait > 3)
                     {
                         bossabilitywait = -1;
-                        int minionamount = Random.Range(4,5);
+                        int minionamount = Random.Range(3,4);
                         int i = 0;
                         while (i <= minionamount)
                         {
