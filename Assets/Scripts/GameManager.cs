@@ -160,9 +160,9 @@ public class GameManager : MonoBehaviour
         gameOverText.gameObject.SetActive(true);
         restartButtonLose.gameObject.SetActive(true);
         returnButtonLose.gameObject.SetActive(true);
-        isGameActive = false;
         healthHUD.gameObject.SetActive(false);
         Debug.Log("Player Died");
+        isGameActive = false;
         cursorManeger.GetComponent<CursorManeger>().PointerCursor();
 
     }
