@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CursorManeger : MonoBehaviour
 {
-    [SerializeField] private Texture2D cursorTexture;
-    [SerializeField] private Texture2D pointerCursor;
+    public Texture2D cursorTexture;
+    public Texture2D pointerCursor;
 
     private Vector2 cursorHotSpot;
 
