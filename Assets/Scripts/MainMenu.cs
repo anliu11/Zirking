@@ -15,6 +15,12 @@ public class MainMenu : MonoBehaviour
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + SceneNum);
     }
 
+    public void Quit()
+    {
+        StartCoroutine(quitGameDelay());
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,4 +40,13 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + SceneNum);
 
     }
+
+    //wait delay
+    IEnumerator quitGameDelay()
+    {
+        yield return new WaitForSeconds(sceneDelayTime);
+        Application.Quit();
+        Debug.Log("player has quit the game");
+    }
+
 }
